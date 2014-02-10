@@ -5,13 +5,20 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 import unittest, time, re
 
-class LogInSales(unittest.TestCase):
+class Selenium2OnSauce(unittest.TestCase):
+
     def setUp(self):
-        self.driver = webdriver.Chrome()
-        self.driver.implicitly_wait(60)
+        desired_capabilities = webdriver.DesiredCapabilities.CHROME
+        desired_capabilities['version'] = '31'
+        desired_capabilities['platform'] = 'Windows 7'
+        desired_capabilities['name'] = 'Log In (Sales)'
+
+        self.driver = webdriver.Remote(
+            desired_capabilities=desired_capabilities,
+            command_executor="http://mariusb:bd27d6b0-f987-4773-b20b-633da38327de@ondemand.saucelabs.com:80/wd/hub"
+        )
+        self.driver.implicitly_wait(30)
         self.base_url = "https://staging.urbancompass.com/"
-        self.verificationErrors = []
-        self.accept_next_alert = True
     
     def test_log_in_sales(self):
         driver = self.driver
@@ -45,30 +52,9 @@ class LogInSales(unittest.TestCase):
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
     
-    def is_element_present(self, how, what):
-        try: self.driver.find_element(by=how, value=what)
-        except NoSuchElementException, e: return False
-        return True
-    
-    def is_alert_present(self):
-        try: self.driver.switch_to_alert()
-        except NoAlertPresentException, e: return False
-        return True
-    
-    def close_alert_and_get_its_text(self):
-        try:
-            alert = self.driver.switch_to_alert()
-            alert_text = alert.text
-            if self.accept_next_alert:
-                alert.accept()
-            else:
-                alert.dismiss()
-            return alert_text
-        finally: self.accept_next_alert = True
-    
     def tearDown(self):
+        print("Link to your job: https://saucelabs.com/jobs/%s" % self.driver.session_id)
         self.driver.quit()
-        self.assertEqual([], self.verificationErrors)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

@@ -21,7 +21,8 @@ class Selenium2OnSauce(unittest.TestCase):
 
         self.driver = webdriver.Remote(
             desired_capabilities=desired_capabilities,
-            command_executor="http://mariusb:bd27d6b0-f987-4773-b20b-633da38327de@ondemand.saucelabs.com:80/wd/hub")
+            command_executor="http://mariusb:bd27d6b0-f987-4773-b20b-633da38327de@ondemand.saucelabs.com:80/wd/hub"
+        )
         self.driver.implicitly_wait(30)
         self.base_url = "https://staging.urbancompass.com/"
 
@@ -55,10 +56,10 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
         driver.find_element_by_link_text("Neighborhoods").click()
-        driver.find_element_by_link_text("DUMBO").click()
-        time.sleep(15)
-        driver.find_element_by_css_selector(".button.button--primary.button--large.button--rounded.button--light--blue").click()
-        time.sleep(10)
+        driver.find_element_by_link_text("BATTERY PARK CITY").click()
+        time.sleep(5)
+        driver.find_element_by_xpath(".//*[@id='experimental']/div[8]/div/a[1]").click()
+        time.sleep(5)
         driver.find_element_by_css_selector("#please-sign-in > footer > p > a").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
