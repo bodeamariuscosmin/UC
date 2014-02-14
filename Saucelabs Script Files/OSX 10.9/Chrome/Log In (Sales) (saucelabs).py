@@ -33,6 +33,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("#please-sign-in > div.modal_content > form > input[type=\"submit\"]").click()
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
+        time.sleep(2)
         driver.find_element_by_xpath("//a[contains(text(),'SEARCH SALES')]").click()
         driver.find_element_by_css_selector("#please-sign-in > div.modal_content > form > fieldset > input[name=\"email\"]").clear()
         driver.find_element_by_css_selector("#please-sign-in > div.modal_content > form > fieldset > input[name=\"email\"]").send_keys("qa+renter@urbancompass.com")
