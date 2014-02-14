@@ -58,10 +58,9 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("Neighborhoods").click()
         driver.find_element_by_link_text("CHELSEA").click()
         time.sleep(5)
-        driver.find_element_by_xpath(".//*[@id='intro']/nav/div/ul/li[6]/a").click()
         driver.find_element_by_link_text("BUY AN APARTMENT IN CHELSEA").click() # This link leads to the Rentals page instead of Sales (it happens just for Saucelabs test script file)
         time.sleep(5)
-        driver.find_element_by_css_selector("#please-sign-in > footer > p > a").click() # It is not found because it is not opening the Sales page but Rentals
+        driver.find_element_by_css_selector("#please-sign-in > footer > p > a").click() # It is not fount because it is not opening the Sales page but Rentals
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
         driver.find_element_by_name("last").clear()
