@@ -23,7 +23,7 @@ class Selenium2OnSauce(unittest.TestCase):
 
         self.driver = webdriver.Remote(
             desired_capabilities=desired_capabilities,
-            command_executor="http://bodeamariuscosmin:3b0e0b6d-0be8-4c80-b432-c0f577551f0f@ondemand.saucelabs.com:80/wd/hub"
+            command_executor="http://mariusb:bd27d6b0-f987-4773-b20b-633da38327de@ondemand.saucelabs.com:80/wd/hub"
         )
         self.driver.implicitly_wait(30)
         self.base_url = "https://staging.urbancompass.com/"
