@@ -12,10 +12,10 @@ my_string = 'string'
 class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
-        desired_capabilities = webdriver.DesiredCapabilities.CHROME
-        desired_capabilities['version'] = '31'
+        desired_capabilities = webdriver.DesiredCapabilities.FIREFOX
+        desired_capabilities['version'] = '26'
         desired_capabilities['platform'] = 'Windows 7'
-        desired_capabilities['name'] = 'Log In (Sales)'
+        desired_capabilities['name'] = 'Contact to Visit (Sales)'
 
         self.driver = webdriver.Remote(
             desired_capabilities=desired_capabilities,
@@ -28,7 +28,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         driver.find_element_by_link_text("Sales").click()
-        driver.find_element_by_link_text("Sign up").click()
+        driver.find_element_by_link_text("Sign up!").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
         driver.find_element_by_name("last").clear()
@@ -38,7 +38,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("(//input[@name='password'])[2]").clear()
         driver.find_element_by_xpath("(//input[@name='password'])[2]").send_keys("parola")
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
-        time.sleep(5)
+        time.sleep(2)
         driver.find_element_by_link_text("Sales").click()
         driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("address_search").click()
@@ -49,18 +49,18 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_name("phoneNumber").clear()
         driver.find_element_by_name("phoneNumber").send_keys("0000")
         driver.find_element_by_xpath("//input[@value='SUBMIT']").click()
-        time.sleep(5)
+        time.sleep(3)
         driver.find_element_by_link_text("CONTINUE SEARCHING").click()
+        # Back to Search
         driver.find_element_by_link_text("Back to Search").click()
-        time.sleep(5)
         driver.find_element_by_id("listing-position-B").click()
         driver.find_element_by_xpath("(//a[contains(text(),'Contact to Visit')])[2]").click()
         driver.find_element_by_link_text("CONTINUE SEARCHING").click()
         driver.find_element_by_link_text("Sales").click()
         time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
-        time.sleep(20)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
+        time.sleep(10)
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
         time.sleep(5)
         driver.find_element_by_css_selector(".listing-picker-popup>a").click()
         time.sleep(5)
