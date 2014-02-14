@@ -93,6 +93,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_name("password").send_keys("parola")
         driver.find_element_by_css_selector("#sign-in > div.modal_content > form > input[type=\"submit\"]").click()
         driver.find_element_by_link_text("CONTINUE SEARCHING").click()
+        time.sleep(3)
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
 
