@@ -109,6 +109,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("(//input[@name='password'])[2]").send_keys("parola")
         driver.find_element_by_xpath(".//*[@id='sign-up']/div[2]/form/input").click()
         time.sleep(2)
+        # Create a search alert to avoid blocking
         driver.find_element_by_xpath(".//*[@id='save_search']/div[4]/div[2]").click()
         driver.find_element_by_xpath(".//*[@id='manage_alerts']").click()
         driver.find_element_by_id("hamburger-navigation").click()
