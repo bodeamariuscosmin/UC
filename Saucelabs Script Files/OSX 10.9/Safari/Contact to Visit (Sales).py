@@ -43,6 +43,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("address_search").click()
         driver.find_element_by_id("address_search").send_keys("Brooklyn")
+        driver.find_element_by_xpath(".//*[@id='filter-regions']/span/span[2]/div/span/div[1]/div").click()
         driver.find_element_by_xpath(".//*[@id='search_button']/a").click()
         time.sleep(3)
         driver.find_element_by_css_selector("#listing-position-A").click()
@@ -67,7 +68,6 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(5)
         driver.find_element_by_link_text("CONTACT TO VISIT").click()
         driver.find_element_by_link_text("CONTINUE SEARCHING").click()
-        driver.find_element_by_link_text("My Visits").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
     
