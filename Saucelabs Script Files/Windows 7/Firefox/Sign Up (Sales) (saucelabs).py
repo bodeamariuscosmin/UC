@@ -15,7 +15,7 @@ class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
         desired_capabilities = webdriver.DesiredCapabilities.FIREFOX
-        desired_capabilities['version'] = '26'
+        desired_capabilities['version'] = '27'
         desired_capabilities['platform'] = 'Windows 7'
         desired_capabilities['name'] = 'Sign Up (Sales)'
 
