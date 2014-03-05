@@ -15,7 +15,7 @@ class Selenium2OnSauce(unittest.TestCase):
         desired_capabilities = webdriver.DesiredCapabilities.INTERNETEXPLORER
         desired_capabilities['version'] = '9'
         desired_capabilities['platform'] = 'Windows 7'
-        desired_capabilities['name'] = 'Contact to Visit(Rentals)'
+        desired_capabilities['name'] = 'Contact to Visit (Rentals)'
 
         self.driver = webdriver.Remote(
             desired_capabilities=desired_capabilities,
@@ -41,7 +41,7 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(5)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
         time.sleep(15)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[1]").click()
         driver.find_element_by_css_selector(".listing-picker-popup>a").click()
         time.sleep(5)
         driver.find_element_by_css_selector(".btn.view").click()
@@ -75,9 +75,9 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(5)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[4]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[3]/div[2]/div/a[2]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[3]/div[2]/div/a[1]").click()
         time.sleep(5)
         driver.find_element_by_link_text("CONTACT TO VISIT").click()
         time.sleep(3)
@@ -86,9 +86,9 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(5)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[1]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[4]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[3]/div[2]/div/a[1]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[3]/div[2]/div/a[2]").click()
         time.sleep(5)
         driver.find_element_by_css_selector(".btn.view").click()
         driver.find_element_by_link_text("CONTACT TO VISIT").click()
