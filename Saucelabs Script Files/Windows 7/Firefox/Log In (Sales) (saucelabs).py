@@ -9,7 +9,7 @@ class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
         desired_capabilities = webdriver.DesiredCapabilities.FIREFOX
-        desired_capabilities['version'] = '26'
+        desired_capabilities['version'] = '27'
         desired_capabilities['platform'] = 'Windows 7'
         desired_capabilities['name'] = 'Log In (Sales)'
 
@@ -41,11 +41,11 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("Logout").click()
         driver.find_element_by_link_text("Neighborhoods").click()
         driver.find_element_by_link_text("CHELSEA").click()
-        time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='experimental']/div[8]/div/a[1]").click()
-        time.sleep(10)
-        driver.find_element_by_css_selector("#please-sign-in > div.modal_content > form > fieldset > input[name=\"email\"]").clear()
-        driver.find_element_by_css_selector("#please-sign-in > div.modal_content > form > fieldset > input[name=\"email\"]").send_keys("qa+renter@urbancompass.com")
+        time.sleep(5)
+        driver.find_element_by_link_text("BUY AN APARTMENT IN CHELSEA").click() 
+        time.sleep(5)
+        driver.find_element_by_xpath(".//*[@id='please-sign-in']/div[2]/form/fieldset[1]/input").clear()
+        driver.find_element_by_xpath(".//*[@id='please-sign-in']/div[2]/form/fieldset[1]/input").send_keys("qa+renter@urbancompass.com")
         driver.find_element_by_xpath("(//input[@name='password'])[4]").clear()
         driver.find_element_by_xpath("(//input[@name='password'])[4]").send_keys("parola")
         driver.find_element_by_css_selector("#please-sign-in > div.modal_content > form > input[type=\"submit\"]").click()
