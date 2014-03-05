@@ -24,7 +24,7 @@ class Selenium2OnSauce(unittest.TestCase):
             command_executor="http://mariusb:bd27d6b0-f987-4773-b20b-633da38327de@ondemand.saucelabs.com:80/wd/hub"
         )
         self.driver.implicitly_wait(30)
-        self.base_url = "https://staging.urbancompass.com/"
+        self.base_url = "https://staging.urbancompass.com"
 
     def test_sign_up(self):
         driver = self.driver
