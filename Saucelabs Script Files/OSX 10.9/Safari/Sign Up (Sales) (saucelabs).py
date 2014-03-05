@@ -14,10 +14,10 @@ my_string = 'string'
 class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
-        desired_capabilities = webdriver.DesiredCapabilities.FIREFOX
-        desired_capabilities['version'] = '26'
+        desired_capabilities = webdriver.DesiredCapabilities.SAFARI
+        desired_capabilities['version'] = '7'
         desired_capabilities['platform'] = 'OS X 10.9'
-        desired_capabilities['name'] = 'Log In'
+        desired_capabilities['name'] = 'Sign Up (Sales)'
 
         self.driver = webdriver.Remote(
             desired_capabilities=desired_capabilities,
