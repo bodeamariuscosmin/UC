@@ -11,7 +11,7 @@ class Selenium2OnSauce(unittest.TestCase):
         desired_capabilities = webdriver.DesiredCapabilities.INTERNETEXPLORER
         desired_capabilities['version'] = '9'
         desired_capabilities['platform'] = 'Windows 7'
-        desired_capabilities['name'] = 'Sign Up'
+        desired_capabilities['name'] = 'Set an Email Alert'
 
         self.driver = webdriver.Remote(
             desired_capabilities=desired_capabilities,
