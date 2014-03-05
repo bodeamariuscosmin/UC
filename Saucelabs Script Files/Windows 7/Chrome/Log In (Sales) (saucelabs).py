@@ -42,7 +42,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("Neighborhoods").click()
         driver.find_element_by_link_text("CHELSEA").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='experimental']/div[8]/div/a[1]").click()
+        driver.find_element_by_xpath(".//*[@id='experimental']/div[8]/div/a[2]").click()
         time.sleep(10)
         driver.find_element_by_css_selector("#please-sign-in > div.modal_content > form > fieldset > input[name=\"email\"]").clear()
         driver.find_element_by_css_selector("#please-sign-in > div.modal_content > form > fieldset > input[name=\"email\"]").send_keys("qa+renter@urbancompass.com")
