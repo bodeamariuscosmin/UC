@@ -20,7 +20,7 @@ class Selenium2OnSauce(unittest.TestCase):
 
         self.driver = webdriver.Remote(
             desired_capabilities=desired_capabilities,
-            command_executor="http://mariusb:bd27d6b0-f987-4773-b20b-633da38327de@ondemand.saucelabs.com:80/wd/hub"
+            command_executor = "http://mariusb:bd27d6b0-f987-4773-b20b-633da38327de@ondemand.saucelabs.com:80/wd/hub"
         )
         self.driver.implicitly_wait(30)
         self.base_url = "https://staging.urbancompass.com/"
@@ -41,7 +41,7 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(2)
         driver.find_element_by_link_text("Rentals").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[1]").click()
         time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
         driver.find_element_by_css_selector(".listing-picker-popup>a").click()
@@ -74,7 +74,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("Edit Moving Info").click()
         driver.find_element_by_link_text("Rentals").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[1]").click()
         time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[4]").click()
         time.sleep(10)
@@ -85,11 +85,11 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("CONTINUE SEARCHING").click()
         driver.find_element_by_link_text("Rentals").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
-        time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[1]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[3]/div[2]/div/a[1]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
+        time.sleep(10)
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[3]/div[2]/div/a[2]").click()
         time.sleep(5)
         driver.find_element_by_css_selector(".btn.view").click()
         driver.find_element_by_link_text("CONTACT TO VISIT").click()
