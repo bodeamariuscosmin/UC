@@ -25,7 +25,7 @@ class Selenium2OnSauce(unittest.TestCase):
         self.driver.implicitly_wait(30)
         self.base_url = "https://staging.urbancompass.com/"
 
-    def test_sign_up(self):
+    def test_sign_up(self): # Bug: Logged users not always log out and this makes the test to fail. 
         driver = self.driver
         driver.get(self.base_url + "/")
         driver.find_element_by_link_text("Sign up").click()

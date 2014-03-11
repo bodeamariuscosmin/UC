@@ -26,7 +26,7 @@ class Selenium2OnSauce(unittest.TestCase):
         self.driver.implicitly_wait(30)
         self.base_url = "https://staging.urbancompass.com/"
 
-    def test_sign_up_sales(self):
+    def test_sign_up_sales(self): # Bug: Logged users not always log out and this makes the test to fail. 
         driver = self.driver
         driver.get(self.base_url + "/")
         driver.find_element_by_link_text("Sales").click()
@@ -42,7 +42,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
-        driver.find_element_by_xpath("//a[contains(text(),'SEARCH SALES')]").click()
+        driver.find_element_by_link_text("Sales").click()
         driver.find_element_by_css_selector("#please-sign-in > footer > p > a").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
@@ -58,7 +58,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("Neighborhoods").click()
         driver.find_element_by_link_text("CHELSEA").click()
         time.sleep(5)
-        driver.find_element_by_link_text("BUY AN APARTMENT IN CHELSEA").click()
+        driver.find_element_by_xpath(".//*[@id='experimental']/div[8]/div/a[2]").click()
         time.sleep(5)
         driver.find_element_by_css_selector("#please-sign-in > footer > p > a").click()
         driver.find_element_by_name("first").clear()

@@ -42,7 +42,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
-        driver.find_element_by_xpath("//a[contains(text(),'SEARCH SALES')]").click()
+        driver.find_element_by_link_text("Sales").click()
         driver.find_element_by_css_selector("#please-sign-in > footer > p > a").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
