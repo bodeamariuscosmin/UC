@@ -100,6 +100,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-A").click()
         driver.find_element_by_link_text("CONTACT TO VISIT").click()
+        time.sleep(5)
         driver.find_element_by_css_selector("#contact-to-visit-anonymous > footer > p > a").click()
         driver.find_element_by_name("email").clear()
         driver.find_element_by_name("email").send_keys("qa+renter@urbancompass.com")
