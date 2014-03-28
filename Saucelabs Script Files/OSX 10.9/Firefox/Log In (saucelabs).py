@@ -20,7 +20,7 @@ class Selenium2OnSauce(unittest.TestCase):
             desired_capabilities=desired_capabilities,
             command_executor="http://mariusb:bd27d6b0-f987-4773-b20b-633da38327de@ondemand.saucelabs.com:80/wd/hub"
         )
-        self.driver.implicitly_wait(30)
+        self.driver.implicitly_wait(10)
         self.base_url = "https://staging.urbancompass.com/"
 
     def test_log_in(self):
@@ -56,7 +56,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("address_search").click()
-        driver.find_element_by_id("address_search").send_keys("Brooklyn")
+        driver.find_element_by_id("address_search").send_keys("Chinatown")
         driver.find_element_by_id("search_button").click()
         time.sleep(5)
         driver.find_element_by_link_text("SIGN UP FOR FREE").click()
@@ -83,7 +83,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("address_search").click()
-        driver.find_element_by_id("address_search").send_keys("Brooklyn")
+        driver.find_element_by_id("address_search").send_keys("Chinatown")
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-A").click()
         driver.find_element_by_link_text("CONTACT TO VISIT").click()
@@ -93,7 +93,12 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_name("password").clear()
         driver.find_element_by_name("password").send_keys("parola")
         driver.find_element_by_css_selector("#sign-in > div.modal_content > form > input[type=\"submit\"]").click()
-        driver.find_element_by_link_text("CONTINUE SEARCHING").click()
+        driver.find_element_by_id("allocation-optional-message").clear()
+        driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
+        driver.find_element_by_xpath("//input[@value='Submit']").click()
+        driver.find_element_by_link_text("MY APARTMENTS").click()
+        driver.find_element_by_xpath(".//*[@id='container']/div/div[2]/div/div/div[1]/nav/ul/li[2]/a").click()
+        time.sleep(2)
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
 

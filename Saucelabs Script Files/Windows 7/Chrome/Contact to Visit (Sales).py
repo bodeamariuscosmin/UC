@@ -12,8 +12,8 @@ my_string = 'string'
 class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
-        desired_capabilities = webdriver.DesiredCapabilities.CHROME
-        desired_capabilities['version'] = '31'
+        desired_capabilities = webdriver.DesiredCapabilities.FIREFOX
+        desired_capabilities['version'] = '26'
         desired_capabilities['platform'] = 'Windows 7'
         desired_capabilities['name'] = 'Contact to Visit (Sales)'
 
@@ -45,27 +45,37 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-A").click()
         driver.find_element_by_link_text("CONTACT TO VISIT").click()
-        driver.find_element_by_name("phoneNumber").clear()
-        driver.find_element_by_name("phoneNumber").send_keys("0000")
-        driver.find_element_by_xpath("//input[@value='SUBMIT']").click()
-        driver.find_element_by_link_text("CONTINUE SEARCHING").click()
-        # Back to Search
-        driver.find_element_by_link_text("Back to Search").click()
+        driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").clear()
+        driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").send_keys("0000")
+        driver.find_element_by_id("allocation-optional-message").clear()
+        driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
+        driver.find_element_by_xpath("//input[@value='Submit']").click()
+        driver.find_element_by_link_text("MY APARTMENTS").click()
+
+        driver.find_element_by_link_text("Sales").click()
         driver.find_element_by_id("listing-position-B").click()
         driver.find_element_by_xpath("(//a[contains(text(),'Contact to Visit')])[2]").click()
-        driver.find_element_by_link_text("CONTINUE SEARCHING").click()
+
+        driver.find_element_by_id("allocation-optional-message").clear()
+        driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
+        driver.find_element_by_xpath("//input[@value='Submit']").click()
+        driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Sales").click() 
         driver.find_element_by_link_text("Map").click() 
         driver.find_element_by_link_text("Sales").click() # Avoiding the returning from List view to Map view bug 
         time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[5]").click()
         time.sleep(5)
         driver.find_element_by_css_selector(".listing-picker-popup>a").click()
         time.sleep(1)
         driver.find_element_by_link_text("CONTACT TO VISIT").click()
-        driver.find_element_by_link_text("CONTINUE SEARCHING").click()
+
+        driver.find_element_by_id("allocation-optional-message").clear()
+        driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
+        driver.find_element_by_xpath("//input[@value='Submit']").click()
+        driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
     

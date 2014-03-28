@@ -17,7 +17,7 @@ class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
         desired_capabilities = webdriver.DesiredCapabilities.FIREFOX
-        desired_capabilities['version'] = '26'
+        desired_capabilities['version'] = '27'
         desired_capabilities['platform'] = 'OS X 10.9'
         desired_capabilities['name'] = 'Sign Up'
 
@@ -25,7 +25,7 @@ class Selenium2OnSauce(unittest.TestCase):
             desired_capabilities=desired_capabilities,
             command_executor="http://mariusb:bd27d6b0-f987-4773-b20b-633da38327de@ondemand.saucelabs.com:80/wd/hub"
         )
-        self.driver.implicitly_wait(30)
+        self.driver.implicitly_wait(10)
         self.base_url = "https://staging.urbancompass.com/"
 
     def test_sign_up(self):
@@ -88,9 +88,12 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("#contact-to-visit-anonymous > div:nth-child(3) > form:nth-child(2) > fieldset:nth-child(2) > input:nth-child(2)").send_keys("qa+"+str(rn.randint(0,99999))+"@urbancompass.com")
         driver.find_element_by_xpath("(//input[@name='password'])[5]").clear()
         driver.find_element_by_xpath("(//input[@name='password'])[5]").send_keys("parola")
-        driver.find_element_by_xpath("(//input[@name='phoneNumber'])[2]").clear()
-        driver.find_element_by_xpath("(//input[@name='phoneNumber'])[2]").send_keys("phone00")
+        driver.find_element_by_xpath(".//*[@id='contact-to-visit-anonymous']/div[2]/form/fieldset[4]/input").clear()
+        driver.find_element_by_xpath(".//*[@id='contact-to-visit-anonymous']/div[2]/form/fieldset[4]/input").send_keys("phone00")
         driver.find_element_by_xpath("//input[@value='Create an account to visit']").click()
+
+        driver.find_element_by_css_selector("#sign-in > div.modal_content > form > input[type=\"submit\"]").click()
+        driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
         driver.find_element_by_link_text("Rentals").click()
