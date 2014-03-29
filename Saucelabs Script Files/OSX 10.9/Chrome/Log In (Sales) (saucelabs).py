@@ -25,6 +25,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         driver.find_element_by_id("hamburger-navigation").click()
+        # Log in from the rental map/list modal
         driver.find_element_by_link_text("Sales").click()
         driver.find_element_by_css_selector("#please-sign-in > div.modal_content > form > fieldset > input[name=\"email\"]").clear()
         driver.find_element_by_css_selector("#please-sign-in > div.modal_content > form > fieldset > input[name=\"email\"]").send_keys("qa+renter@urbancompass.com")
@@ -34,6 +35,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
         time.sleep(2)
+        # Log in from the homepage Sales button
         driver.find_element_by_link_text("Sales").click()
         driver.find_element_by_css_selector("#please-sign-in > div.modal_content > form > fieldset > input[name=\"email\"]").clear()
         driver.find_element_by_css_selector("#please-sign-in > div.modal_content > form > fieldset > input[name=\"email\"]").send_keys("qa+renter@urbancompass.com")
@@ -43,6 +45,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
         driver.find_element_by_id("hamburger-navigation").click()
+        # Log in from the Neighborhood guide
         driver.find_element_by_link_text("Neighborhoods").click()
         driver.find_element_by_link_text("CHELSEA").click()
         time.sleep(5)

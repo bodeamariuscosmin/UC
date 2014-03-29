@@ -24,6 +24,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         driver.find_element_by_id("hamburger-navigation").click()
+        # Log in with qa+renter@urbancompass.com
         driver.find_element_by_link_text("Log in").click()
         driver.find_element_by_name("email").clear()
         driver.find_element_by_name("email").send_keys("qa+renter@urbancompass.com")
@@ -32,6 +33,7 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(1)
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("My profile").click()
+        # Setting another password "a" (to see if it is allowed to set short password. This one is short enough)
         driver.find_element_by_link_text("Change Password").click()
         driver.find_element_by_xpath(".//*[@id='update-password-form']/table/tbody/tr[1]/td[2]/input").send_keys("parola")
         driver.find_element_by_xpath(".//*[@id='update-password-form']/table/tbody/tr[2]/td[2]/input").send_keys("a")
@@ -40,6 +42,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
         driver.find_element_by_id("hamburger-navigation").click()
+        # Logging with the new password
         driver.find_element_by_link_text("Log in").click()
         driver.find_element_by_name("email").clear()
         driver.find_element_by_name("email").send_keys("qa+renter@urbancompass.com")
@@ -47,6 +50,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("#sign-in > div.modal_content > form > input[type=\"submit\"]").click()
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("My profile").click()
+        # Setting the initial password 
         driver.find_element_by_link_text("Change Password").click()
         driver.find_element_by_name("currentPassword").clear()
         driver.find_element_by_name("currentPassword").send_keys("a")

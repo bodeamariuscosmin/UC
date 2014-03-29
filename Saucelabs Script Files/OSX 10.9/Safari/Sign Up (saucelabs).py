@@ -28,6 +28,7 @@ class Selenium2OnSauce(unittest.TestCase):
     def test_sign_up(self): # Bug: Logged users not always log out and this makes the test to fail. 
         driver = self.driver
         driver.get(self.base_url + "/")
+        # Sign up from the header
         driver.find_element_by_link_text("Sign up").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
@@ -40,6 +41,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
+        # Sign up from the map modal
         driver.find_element_by_link_text("Rentals").click()
         time.sleep(2)
         driver.find_element_by_link_text("SIGN UP FOR FREE").click()
@@ -54,6 +56,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
+        # Sign up from the rental list modal
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("address_search").click()
@@ -72,12 +75,14 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
+        
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("address_search").click()
         driver.find_element_by_id("address_search").send_keys("Brooklyn")
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-A").click()
+        # Sign up from Contact to visit
         driver.find_element_by_link_text("CONTACT TO VISIT").click()
         driver.find_element_by_css_selector("div.input-2 > input[name=\"first\"]").clear()
         driver.find_element_by_css_selector("div.input-2 > input[name=\"first\"]").send_keys("qa")
@@ -90,12 +95,14 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("(//input[@name='phoneNumber'])[2]").clear()
         driver.find_element_by_xpath("(//input[@name='phoneNumber'])[2]").send_keys("phone00")
         driver.find_element_by_xpath("//input[@value='Create an account to visit']").click()
+        # Agent allocation
         driver.find_element_by_id("allocation-optional-message").clear()
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
         driver.find_element_by_xpath("//input[@value='Submit']").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
+        # Sign up from Email Alert
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_xpath("//li[@id='save_search']/a/img").click()
         driver.find_element_by_css_selector("div.save_button").click()

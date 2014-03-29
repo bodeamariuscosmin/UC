@@ -35,13 +35,15 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_name("password").clear()
         driver.find_element_by_name("password").send_keys("parola")
         driver.find_element_by_css_selector("#sign-in > div.modal_content > form > input[type=\"submit\"]").click()
-        time.sleep(10)
+        time.sleep(2)
+        # Setting the first email alert
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_id("address_search").click()
         driver.find_element_by_id("address_search").send_keys("Brooklyn")
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_xpath("//li[@id='save_search']/a/img").click()
         driver.find_element_by_css_selector("div.save_button").click()
+        # Setting the second email alert
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_id("address_search").click()
         driver.find_element_by_id("address_search").send_keys("Manhattan")
@@ -49,15 +51,18 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("//li[@id='save_search']/a/img").click()
         driver.find_element_by_css_selector("div.save_button").click()
         driver.find_element_by_id("manage_alerts").click()
+        # Check the Notify me via email buttons switch
         driver.find_element_by_id("notify-immediately").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Search alerts").click()
         driver.find_element_by_css_selector("div.search-alert-run").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Search alerts").click()
+        # Deleting the alert
         driver.find_element_by_css_selector("div.search-alert-delete.remove-button").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Search alerts").click()
+        # Deleting the alert
         driver.find_element_by_css_selector("div.search-alert-delete.remove-button").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()

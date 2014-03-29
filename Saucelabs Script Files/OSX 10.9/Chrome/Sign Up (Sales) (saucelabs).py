@@ -29,6 +29,8 @@ class Selenium2OnSauce(unittest.TestCase):
     def test_sign_up_sales(self):
         driver = self.driver
         driver.get(self.base_url + "/")
+        # Sign up from sales map/list modal
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Sales").click()
         driver.find_element_by_css_selector("#please-sign-in > footer > p > a").click()
         driver.find_element_by_name("first").clear()
@@ -42,6 +44,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
+        # Sign up from homepage Sales button
         driver.find_element_by_link_text("Sales").click()
         driver.find_element_by_css_selector("#please-sign-in > footer > p > a").click()
         driver.find_element_by_name("first").clear()
@@ -55,6 +58,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
+        # Sign up from Neighborhood guide
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Neighborhoods").click()
         driver.find_element_by_link_text("CHELSEA").click()

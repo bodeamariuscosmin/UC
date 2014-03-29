@@ -29,6 +29,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         driver.find_element_by_id("hamburger-navigation").click()
+        # Sign up
         driver.find_element_by_link_text("Sign up").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
@@ -50,24 +51,26 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
         driver.find_element_by_css_selector(".listing-picker-popup>a").click()
-        time.sleep(5)
-        driver.find_element_by_css_selector(".btn.view").click()
+        time.sleep(2)
+        # The first Contact to visit button (from the map modal)
         driver.find_element_by_link_text("CONTACT TO VISIT").click()
+        # Agent allocation
         driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").clear()
         driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").send_keys("0000")
         driver.find_element_by_id("allocation-optional-message").clear()
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
         driver.find_element_by_xpath("//input[@value='Submit']").click()
-
         driver.find_element_by_link_text("MY APARTMENTS").click()
-        
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("address_search").click()
         driver.find_element_by_id("address_search").send_keys("Chinatown")
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-A").click()
+        # The first Contact to visit button (from the top)
         driver.find_element_by_link_text("CONTACT TO VISIT").click()
+        # Agent allocation
+        driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
         driver.find_element_by_xpath("//input[@value='Submit']").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Rentals").click()
@@ -76,8 +79,9 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("address_search").send_keys("Chinatown")
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-B").click()
-        driver.find_element_by_link_text("CONTACT TO VISIT").click()
-        driver.find_element_by_id("allocation-optional-message").clear()
+        # The first Contact to visit button (from the bottom)
+        driver.find_element_by_xpath("(//a[contains(text(),'Contact to Visit')])[2]").click()
+        # Agent allocation
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
         driver.find_element_by_xpath("//input[@value='Submit']").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()

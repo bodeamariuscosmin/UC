@@ -27,6 +27,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         driver.find_element_by_id("hamburger-navigation").click()
+        # Log in from the header
         driver.find_element_by_link_text("Log in").click()
         driver.find_element_by_name("email").clear()
         driver.find_element_by_name("email").send_keys("qa+renter@urbancompass.com")
@@ -37,6 +38,8 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
         driver.find_element_by_id("hamburger-navigation").click()
+        # Log in from the header
+        # Switching from Sign up to Log in
         driver.find_element_by_link_text("Sign up").click()
         driver.find_element_by_link_text("Log in!").click()
         driver.find_element_by_name("email").clear()
@@ -48,6 +51,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
         driver.find_element_by_id("hamburger-navigation").click()
+        # Log in from the rental map modal
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("SIGN UP FOR FREE").click()
         driver.find_element_by_link_text("Log in!").click()
@@ -60,6 +64,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
         driver.find_element_by_id("hamburger-navigation").click()
+        # Log in from the rental list modal
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("address_search").click()
@@ -77,6 +82,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
         driver.find_element_by_id("hamburger-navigation").click()
+        # Log in from Email alert
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_xpath("//li[@id='save_search']/a/img").click()
         driver.find_element_by_css_selector("div.save_button").click()
@@ -93,6 +99,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
         driver.find_element_by_id("hamburger-navigation").click()
+        # Log in from the Contact to visit button
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("address_search").click()
@@ -106,8 +113,8 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_name("email").send_keys("qa+renter@urbancompass.com")
         driver.find_element_by_name("password").clear()
         driver.find_element_by_name("password").send_keys("parola")
+        # Agent allocation
         driver.find_element_by_css_selector("#sign-in > div.modal_content > form > input[type=\"submit\"]").click()
-
         driver.find_element_by_link_text("MY APARTMENTS").click()
         time.sleep(2)
         driver.find_element_by_link_text("Me").click()
