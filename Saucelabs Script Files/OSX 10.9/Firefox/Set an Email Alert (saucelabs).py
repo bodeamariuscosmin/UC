@@ -23,7 +23,7 @@ class Selenium2OnSauce(unittest.TestCase):
             desired_capabilities=desired_capabilities,
             command_executor="http://mariusb:bd27d6b0-f987-4773-b20b-633da38327de@ondemand.saucelabs.com:80/wd/hub"
         )
-        self.driver.implicitly_wait(30)
+        self.driver.implicitly_wait(10)
         self.base_url = "https://staging.urbancompass.com/"
 
     def test_alert(self):
@@ -55,7 +55,8 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("notify-immediately").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Search alerts").click()
-        driver.find_element_by_css_selector("div.search-alert-run").click()
+        time.sleep(3)
+        driver.find_element_by_css_selector(".search-alert-run").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Search alerts").click()
         # Deleting the alert

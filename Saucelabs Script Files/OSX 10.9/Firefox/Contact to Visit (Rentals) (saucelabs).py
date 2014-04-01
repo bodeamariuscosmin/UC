@@ -49,8 +49,8 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
         driver.find_element_by_css_selector(".listing-picker-popup>a").click()
         time.sleep(2)
-        # Contact to visit from the map modal
-        driver.find_element_by_link_text("CONTACT TO VISIT").click()
+        # Contact Agent from the map modal
+        driver.find_element_by_link_text("CONTACT AGENT").click()
         # Agent allocation
         driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").clear()
         driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").send_keys("0000")
@@ -64,8 +64,8 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("address_search").send_keys("Chinatown")
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-A").click()
-        # Contact to visit from the first button from full listing view
-        driver.find_element_by_link_text("CONTACT TO VISIT").click()
+        # Contact Agent from the first button from full listing view
+        driver.find_element_by_link_text("CONTACT AGENT").click()
         # Agent allocation
         driver.find_element_by_id("allocation-optional-message").clear()
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
@@ -76,8 +76,8 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("address_search").send_keys("Chinatown")
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-B").click()
-        # Contact to visit from the second button from full listing view
-        driver.find_element_by_link_text("CONTACT TO VISIT").click()
+        # Contact Agent from the second button from full listing view
+        driver.find_element_by_xpath("(//a[contains(text(),'Contact Agent')])[2]").click()
         # Agent allocation
         driver.find_element_by_id("allocation-optional-message").clear()
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")

@@ -44,7 +44,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("address_search").send_keys("Chinatown")
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-A").click()
-        driver.find_element_by_link_text("CONTACT TO VISIT").click()
+        driver.find_element_by_link_text("CONTACT AGENT").click()
         driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").clear()
         driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").send_keys("0000")
         driver.find_element_by_id("allocation-optional-message").clear()
@@ -54,7 +54,7 @@ class Selenium2OnSauce(unittest.TestCase):
 
         driver.find_element_by_link_text("Sales").click()
         driver.find_element_by_id("listing-position-B").click()
-        driver.find_element_by_xpath("(//a[contains(text(),'Contact to Visit')])[2]").click()
+        driver.find_element_by_xpath("(//a[contains(text(),'Contact Agent')])[2]").click()
 
         driver.find_element_by_id("allocation-optional-message").clear()
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
@@ -65,12 +65,12 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("Sales").click() # Avoiding the returning from List view to Map view bug 
         time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
-        time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[5]").click()
-        time.sleep(5)
-        driver.find_element_by_css_selector(".listing-picker-popup>a").click()
+        time.sleep(15)
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
+        time.sleep(15)
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[3]/div[2]/div/a[1]").click()
         time.sleep(1)
-        driver.find_element_by_link_text("CONTACT TO VISIT").click()
+        driver.find_element_by_link_text("CONTACT AGENT").click()
 
         driver.find_element_by_id("allocation-optional-message").clear()
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")

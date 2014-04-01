@@ -45,8 +45,8 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("address_search").send_keys("Chinatown")
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-A").click()
-        # Contact to visit from the top button
-        driver.find_element_by_link_text("CONTACT TO VISIT").click()
+        # Contact Agent from the top button
+        driver.find_element_by_link_text("CONTACT AGENT").click()
         # Agent allocation
         driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").clear()
         driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").send_keys("0000")
@@ -55,9 +55,12 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("//input[@value='Submit']").click()
         # Back to Search
         driver.find_element_by_link_text("Back to Search").click()
+        driver.find_element_by_id("address_search").click()
+        driver.find_element_by_id("address_search").send_keys("Chinatown")
+        driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-B").click()
-        # Contact to visit from the second button (from bottom of the page)
-        driver.find_element_by_xpath("(//a[contains(text(),'Contact to Visit')])[2]").click()
+        # Contact Agent from the second button (from bottom of the page)
+        driver.find_element_by_xpath("(//a[contains(text(),'Contact Agent')])[2]").click()
         driver.find_element_by_id("allocation-optional-message").clear()
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
         driver.find_element_by_xpath("//input[@value='Submit']").click()
@@ -67,12 +70,12 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[5]").click()
-        time.sleep(5)
-        driver.find_element_by_css_selector(".listing-picker-popup>a").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
+        time.sleep(10)
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[3]/div[2]/div/a[1]").click()
         time.sleep(1)
-        # Contact to visit from the map modal
-        driver.find_element_by_link_text("CONTACT TO VISIT").click()
+        # Contact Agent from the map modal
+        driver.find_element_by_link_text("CONTACT AGENT").click()
         # Agent allocation
         driver.find_element_by_id("allocation-optional-message").clear()
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")

@@ -76,7 +76,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
-        # Sign up from Contact to Visit button
+        # Sign up from Contact Agent button
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("address_search").click()
@@ -84,7 +84,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("search_button").click()
         time.sleep(1)
         driver.find_element_by_id("listing-position-A").click()
-        driver.find_element_by_link_text("CONTACT TO VISIT").click()
+        driver.find_element_by_link_text("CONTACT AGENT").click()
         driver.find_element_by_css_selector("div.input-2 > input[name=\"first\"]").clear()
         driver.find_element_by_css_selector("div.input-2 > input[name=\"first\"]").send_keys("qa")
         driver.find_element_by_css_selector("div.input-2 > input[name=\"last\"]").clear()
