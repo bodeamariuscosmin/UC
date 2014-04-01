@@ -27,6 +27,7 @@ class Selenium2OnSauce(unittest.TestCase):
     def test_sales_contact_to_visit(self):
         driver = self.driver
         driver.get(self.base_url + "/")
+        # 
         driver.find_element_by_link_text("Sign up").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")

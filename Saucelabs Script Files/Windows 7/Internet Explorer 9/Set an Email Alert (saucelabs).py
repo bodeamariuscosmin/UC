@@ -48,6 +48,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("notify-immediately").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Search alerts").click()
+        time.sleep(5)
         driver.find_element_by_css_selector("div.search-alert-run").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Search alerts").click()
