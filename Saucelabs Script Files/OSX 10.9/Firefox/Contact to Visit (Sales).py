@@ -55,9 +55,6 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("//input[@value='Submit']").click()
         # Back to Search
         driver.find_element_by_link_text("Back to Search").click()
-        driver.find_element_by_id("address_search").click()
-        driver.find_element_by_id("address_search").send_keys("Chinatown")
-        driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-B").click()
         # Contact Agent from the second button (from bottom of the page)
         driver.find_element_by_xpath("(//a[contains(text(),'Contact Agent')])[2]").click()
@@ -70,7 +67,7 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[1]").click()
         time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[3]/div[2]/div/a[1]").click()
         time.sleep(1)

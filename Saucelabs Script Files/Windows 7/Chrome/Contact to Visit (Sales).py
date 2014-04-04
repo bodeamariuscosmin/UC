@@ -53,6 +53,9 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("MY APARTMENTS").click()
 
         driver.find_element_by_link_text("Sales").click()
+        driver.find_element_by_id("address_search").click()
+        driver.find_element_by_id("address_search").send_keys("Chinatown")
+        driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-B").click()
         driver.find_element_by_xpath("(//a[contains(text(),'Contact Agent')])[2]").click()
 
@@ -66,7 +69,7 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
         time.sleep(15)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[1]").click()
         time.sleep(15)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[3]/div[2]/div/a[1]").click()
         time.sleep(1)

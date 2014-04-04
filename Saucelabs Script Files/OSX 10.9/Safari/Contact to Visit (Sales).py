@@ -63,7 +63,7 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[1]").click()
         time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[3]/div[2]/div/a[1]").click()
         time.sleep(1)

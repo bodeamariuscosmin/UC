@@ -99,7 +99,10 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath(".//*[@id='contact-to-visit-anonymous']/div[2]/form/fieldset[4]/input").send_keys("0000")
         driver.find_element_by_xpath(".//*[@id='contact-to-visit-anonymous']/div[2]/form/input").click()
         # Agent allocation
-        driver.find_element_by_xpath("//input[@value='Submit']").click()
+        # driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
+        # driver.find_element_by_xpath("//input[@value='Submit']").click()
+        driver.find_element_by_xpath(".//*[@id='allocation-agent']/div[2]/form/input").click()
+        # driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
         time.sleep(2)
         driver.find_element_by_link_text("Me").click()

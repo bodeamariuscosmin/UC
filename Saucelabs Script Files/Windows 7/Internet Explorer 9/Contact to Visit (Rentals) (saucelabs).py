@@ -40,22 +40,21 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(5)
         driver.find_element_by_link_text("Rentals").click()
         # Submitting a listing from the map modal
+        driver.find_element_by_link_text("Map").click()
         driver.find_element_by_link_text("Rentals").click()
         time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[1]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[4]").click()
         driver.find_element_by_css_selector(".listing-picker-popup>a").click()
         time.sleep(5)
         driver.find_element_by_css_selector(".btn.view").click()
         driver.find_element_by_link_text("CONTACT AGENT").click()
         # Agent allocation
-        
         driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").send_keys("0000")
         driver.find_element_by_id("allocation-optional-message").clear()
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
         driver.find_element_by_xpath("//input[@value='Submit']").click()
-
         driver.find_element_by_link_text("MY APARTMENTS").click()
         # Submitting a listing from the first Contact Agent button
         driver.find_element_by_link_text("Rentals").click()
@@ -65,11 +64,10 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-A").click()
         driver.find_element_by_link_text("CONTACT AGENT").click()
-        
+        # Agent allocation
         driver.find_element_by_id("allocation-optional-message").clear()
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
         driver.find_element_by_xpath("//input[@value='Submit']").click()
-
         driver.find_element_by_link_text("MY APARTMENTS").click()
         # Submitting a listing from the second Contact Agent button
         driver.find_element_by_link_text("Rentals").click()
@@ -79,11 +77,10 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-B").click()
         driver.find_element_by_xpath("(//a[contains(text(),'Contact Agent')])[2]").click()
-        
+        # Agent allocation
         driver.find_element_by_id("allocation-optional-message").clear()
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
         driver.find_element_by_xpath("//input[@value='Submit']").click()
-
         driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()

@@ -29,6 +29,7 @@ class Selenium2OnSauce(unittest.TestCase):
     def test_sign_up_sales(self):
         driver = self.driver
         driver.get(self.base_url + "/")
+        # Sign up from the first Sales button
         driver.find_element_by_link_text("Sales").click()
         driver.find_element_by_css_selector("#please-sign-in > footer > p > a").click()
         driver.find_element_by_name("first").clear()
@@ -42,7 +43,8 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
-        driver.find_element_by_link_text("Sales").click()
+        # Sign up from second Sales button
+        driver.find_element_by_xpath(".//*[@id='homepage-content']/div[3]/div[2]/div/div[3]/a[2]").click()
         driver.find_element_by_css_selector("#please-sign-in > footer > p > a").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
@@ -55,6 +57,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
+        # Sign up from the NH "Buy an apartment on <neighborhood>"
         driver.find_element_by_link_text("Neighborhoods").click()
         driver.find_element_by_link_text("CHELSEA").click()
         time.sleep(5)
