@@ -50,10 +50,22 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("My Apartments").click()
         # See if the listing is set as a Favorite
         driver.find_element_by_link_text("Favorites").click()
+        # Verifying if the listing is set as Favorite
+        try:
+            driver.find_element_by_xpath(".//*[@id='container']/div/div[2]/div/div/div[2]/div/div[3]/div/div/a")
+            print "The listing is set as Favorite."
+        except Exception ('ElementNotVisibleException'):
+            print "The listing is set as Favorite."
         # Submit the listing from the Favorite page
         driver.find_element_by_xpath("//div[@id='container']/div/div[2]/div/div/div[2]/div/div[3]/div/div/a/div[5]").click()
         # See if the listing is submitted
         driver.find_element_by_link_text("Request Status").click()
+        # Verifying if the listing is submitted
+        try:
+            driver.find_element_by_xpath(".//*[@id='container']/div/div[2]/div/div/div[2]/div/div[2]/div/div[2]/a")
+            print "The listing is submitted."
+        except Exception ('ElementNotVisibleException'):
+            print "The listing is not submitted."
         driver.find_element_by_css_selector("div.dropdown__link").click()
         driver.find_element_by_link_text("Logout").click()
     
