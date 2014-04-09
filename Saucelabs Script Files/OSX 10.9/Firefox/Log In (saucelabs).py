@@ -100,7 +100,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_name("password").send_keys("parola")
         driver.find_element_by_css_selector("#sign-in > div.modal_content > form > input[type=\"submit\"]").click()
         # No Agent allocation for existing users?
-        driver.find_element_by_link_text("MY APARTMENTS").click()
+        # driver.find_element_by_link_text("MY APARTMENTS").click()
         time.sleep(2)
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
