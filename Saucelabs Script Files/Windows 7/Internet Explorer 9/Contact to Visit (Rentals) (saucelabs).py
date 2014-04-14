@@ -37,7 +37,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("(//input[@name='email'])[2]").send_keys("qa+"+str(rn.randint(0,99999))+"@urbancompass.com")
         driver.find_element_by_xpath(".//*[@id='sign-up']/div[2]/form/fieldset[4]/input").send_keys("parola")
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
-        time.sleep(5)
+        time.sleep(2)
         driver.find_element_by_link_text("Rentals").click()
         # Submitting a listing from the map modal
         driver.find_element_by_link_text("Map").click()
@@ -45,7 +45,7 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[1]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[1]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
         driver.find_element_by_css_selector(".listing-picker-popup>a").click()
         time.sleep(5)
         driver.find_element_by_css_selector(".btn.view").click()

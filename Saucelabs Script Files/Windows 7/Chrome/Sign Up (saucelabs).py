@@ -92,8 +92,8 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath(".//*[@id='contact-to-visit-anonymous']/div[2]/form/fieldset[4]/input").click()
         driver.find_element_by_xpath(".//*[@id='contact-to-visit-anonymous']/div[2]/form/fieldset[4]/input").send_keys("0000")
         driver.find_element_by_xpath("//input[@value='Create an account to visit']").click()
-        driver.find_element_by_xpath(".//*[@id='allocation-agent']/div[2]/form/input").click()
-        # driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
+        # driver.find_element_by_xpath(".//*[@id='allocation-agent']/div[2]/form/input").click()
+        driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
         # driver.find_element_by_xpath("//input[@value='Submit']").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
 

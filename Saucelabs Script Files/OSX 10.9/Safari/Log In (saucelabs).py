@@ -53,6 +53,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("#sign-in > div.modal_content > form > input[type=\"submit\"]").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
+        time.sleep(2)
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("address_search").click()

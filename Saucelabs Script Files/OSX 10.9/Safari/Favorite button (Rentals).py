@@ -52,7 +52,7 @@ class Selenium2OnSauce(unittest.TestCase):
             driver.find_element_by_xpath(".//*[@id='container']/div/div[2]/div/div/div[2]/div/div[3]/div/div/a")
             print "The listing is set as Favorite."
         except Exception ('ElementNotVisibleException'):
-            print "The listing is set as Favorite."
+            print "The listing is not set as Favorite."
         # Submit the listing from the Favorite page
         driver.find_element_by_xpath("//div[@id='container']/div/div[2]/div/div/div[2]/div/div[3]/div/div/a/div[5]").click()
         # See if the listing is submitted
