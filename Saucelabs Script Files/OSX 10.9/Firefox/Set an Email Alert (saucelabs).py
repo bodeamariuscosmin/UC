@@ -15,7 +15,7 @@ class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
         desired_capabilities = webdriver.DesiredCapabilities.FIREFOX
-        desired_capabilities['version'] = '26'
+        desired_capabilities['version'] = '28'
         desired_capabilities['platform'] = 'OS X 10.9'
         desired_capabilities['name'] = 'Set an Email Alert'
 

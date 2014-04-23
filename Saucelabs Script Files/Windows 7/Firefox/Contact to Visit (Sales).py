@@ -13,7 +13,7 @@ class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
         desired_capabilities = webdriver.DesiredCapabilities.FIREFOX
-        desired_capabilities['version'] = '26'
+        desired_capabilities['version'] = '28'
         desired_capabilities['platform'] = 'Windows 7'
         desired_capabilities['name'] = 'Contact to Visit (Sales)'
 
@@ -54,8 +54,10 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
         driver.find_element_by_xpath("//input[@value='Submit']").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
-
         driver.find_element_by_link_text("Sales").click()
+        driver.find_element_by_id("address_search").click()
+        driver.find_element_by_id("address_search").send_keys("Chinatown")
+        driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-B").click()
         # Contact Agent from the second button (bottom)
         driver.find_element_by_xpath("(//a[contains(text(),'Contact Agent')])[2]").click()
@@ -70,9 +72,9 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div/a[1]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[3]/div[2]/div/a[1]").click()
         # driver.find_element_by_css_selector(".listing-picker-popup>a").click()
         time.sleep(1)
         # Contact Agent from the map modal
