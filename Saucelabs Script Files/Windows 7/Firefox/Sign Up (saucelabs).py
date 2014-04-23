@@ -79,7 +79,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("address_search").click()
         driver.find_element_by_id("address_search").send_keys("Brooklyn")
         driver.find_element_by_id("search_button").click()
-        driver.find_element_by_id("listing-position-A").click()
+        driver.find_element_by_id("listing-position-B").click()
         driver.find_element_by_link_text("CONTACT AGENT").click()
         driver.find_element_by_css_selector("div.input-2 > input[name=\"first\"]").clear()
         driver.find_element_by_css_selector("div.input-2 > input[name=\"first\"]").send_keys("qa")
