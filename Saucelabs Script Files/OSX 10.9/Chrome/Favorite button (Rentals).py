@@ -45,6 +45,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("address_search").click()
         driver.find_element_by_id("address_search").send_keys("Chinatown")
         driver.find_element_by_id("search_button").click()
+        time.sleep(2)
         driver.find_element_by_id("listing-position-A").click()
         driver.find_element_by_css_selector(".ss-icon.ss-star").click()
         driver.find_element_by_id("hamburger-navigation").click()
