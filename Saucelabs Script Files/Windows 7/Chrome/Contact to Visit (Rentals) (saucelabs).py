@@ -69,9 +69,9 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("CONTACT AGENT").click()
         # Agent allocation
         # driver.find_element_by_id("allocation-optional-message").clear()
-        # driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
-        driver.find_element_by_xpath(".//*[@id='allocation-agent']/div[2]/form/input").click()
-        # driver.find_element_by_xpath("//input[@value='Submit']").click()
+        driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
+        # driver.find_element_by_xpath(".//*[@id='allocation-agent']/div[2]/form/input").click()
+        driver.find_element_by_xpath("//input[@value='Submit']").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()

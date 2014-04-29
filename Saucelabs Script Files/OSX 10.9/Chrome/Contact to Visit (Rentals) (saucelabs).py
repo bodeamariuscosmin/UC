@@ -72,8 +72,8 @@ class Selenium2OnSauce(unittest.TestCase):
         # The first Contact Agent button (from the top)
         driver.find_element_by_link_text("CONTACT AGENT").click()
         # Agent allocation
-        driver.find_element_by_xpath(".//*[@id='allocation-agent']/div[2]/form/input").click()
-        # driver.find_element_by_xpath("//input[@value='Submit']").click()
+        # driver.find_element_by_xpath(".//*[@id='allocation-agent']/div[2]/form/input").click()
+        driver.find_element_by_xpath("//input[@value='Submit']").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
