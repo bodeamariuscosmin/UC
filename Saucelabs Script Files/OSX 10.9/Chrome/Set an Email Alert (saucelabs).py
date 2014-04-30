@@ -39,8 +39,9 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(2)
         # Setting the first email alert
         driver.find_element_by_link_text("Rentals").click()
-        driver.find_element_by_id("address_search").click()
-        driver.find_element_by_id("address_search").send_keys("Brooklyn")
+        driver.find_element_by_id("token-input-address_search").click()
+        driver.find_element_by_id("token-input-address_search").send_keys("Flatiron")
+        driver.find_element_by_xpath(".//*[@id='search']/div[7]/ul/li/b").click()
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_xpath("//li[@id='save_search']/a/img").click()
         driver.find_element_by_css_selector("div.save_button").click()
@@ -49,8 +50,9 @@ class Selenium2OnSauce(unittest.TestCase):
         # Setting the second email alert
         time.sleep(3)
         driver.find_element_by_link_text("Rentals").click()
-        driver.find_element_by_id("address_search").click()
-        driver.find_element_by_id("address_search").send_keys("Manhattan")
+        driver.find_element_by_id("token-input-address_search").click()
+        driver.find_element_by_id("token-input-address_search").send_keys("Manhattan")
+        driver.find_element_by_xpath(".//*[@id='search']/div[7]/ul/li/b").click()
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_xpath("//li[@id='save_search']/a/img").click()
         driver.find_element_by_xpath(".//*[@id='save_search']/div[4]/div[2]").click()

@@ -58,9 +58,6 @@ class Selenium2OnSauce(unittest.TestCase):
         # Sign up from the Rentals page list modal
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
-        driver.find_element_by_id("address_search").click()
-        driver.find_element_by_id("address_search").send_keys("Brooklyn")
-        driver.find_element_by_id("search_button").click()
         driver.find_element_by_css_selector("div.welcome-wrapper.close-wrapper > #welcome-to-urban-compass > center > a.button.introduction-sign-up-button").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
@@ -76,8 +73,9 @@ class Selenium2OnSauce(unittest.TestCase):
         # Sign up from the Contact to visit button
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
-        driver.find_element_by_id("address_search").click()
-        driver.find_element_by_id("address_search").send_keys("Brooklyn")
+        driver.find_element_by_id("token-input-address_search").click()
+        driver.find_element_by_id("token-input-address_search").send_keys("Flatiron")
+        driver.find_element_by_xpath(".//*[@id='search']/div[7]/ul/li/b").click()
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-A").click()
         driver.find_element_by_link_text("CONTACT AGENT").click()
