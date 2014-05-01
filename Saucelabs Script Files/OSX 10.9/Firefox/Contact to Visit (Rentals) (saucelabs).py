@@ -60,9 +60,8 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
-        driver.find_element_by_id("token-input-address_search").click()
-        driver.find_element_by_id("token-input-address_search").send_keys("Flatiron")
-        driver.find_element_by_xpath(".//*[@id='search']/div[7]/ul/li/b").click()
+        driver.find_element_by_id("address_search").click()
+        driver.find_element_by_id("address_search").send_keys("Chinatown")
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-A").click()
         # Contact Agent from the first button from full listing view
@@ -74,9 +73,8 @@ class Selenium2OnSauce(unittest.TestCase):
         # driver.find_element_by_xpath(".//*[@id='allocation-agent']/div[2]/form/input").click()
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
-        driver.find_element_by_id("token-input-address_search").click()
-        driver.find_element_by_id("token-input-address_search").send_keys("Flatiron")
-        driver.find_element_by_xpath(".//*[@id='search']/div[7]/ul/li/b").click()
+        driver.find_element_by_id("address_search").click()
+        driver.find_element_by_id("address_search").send_keys("Chinatown")
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-B").click()
         # Contact Agent from the second button from full listing view

@@ -10,6 +10,7 @@ import random as rn
 import unittest, time, re
 my_string = 'string'
 
+
 class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
@@ -44,9 +45,6 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
         driver.find_element_by_link_text("Rentals").click()
-        driver.find_element_by_link_text("Map").click()
-        driver.find_element_by_id("hamburger-navigation").click()
-        driver.find_element_by_link_text("Rentals").click()
         # Sign up from rental map modal
         driver.find_element_by_link_text("SIGN UP FOR FREE").click()
         driver.find_element_by_name("first").clear()
@@ -64,7 +62,10 @@ class Selenium2OnSauce(unittest.TestCase):
         # Sign up from rental list modal
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
-        driver.find_element_by_link_text("SIGN UP FOR FREE").click()
+        driver.find_element_by_id("address_search").click()
+        driver.find_element_by_id("address_search").send_keys("Chinatown")
+        driver.find_element_by_id("search_button").click()
+        driver.find_element_by_css_selector("div.welcome-wrapper.close-wrapper > #welcome-to-urban-compass > center > a.button.introduction-sign-up-button").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
         driver.find_element_by_name("last").clear()
@@ -80,9 +81,8 @@ class Selenium2OnSauce(unittest.TestCase):
         # Sign up from Contact to Visit button
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
-        driver.find_element_by_id("token-input-address_search").click()
-        driver.find_element_by_id("token-input-address_search").send_keys("Flatiron")
-        driver.find_element_by_xpath(".//*[@id='search']/div[7]/ul/li/b").click()
+        driver.find_element_by_id("address_search").click()
+        driver.find_element_by_id("address_search").send_keys("Chinatown")
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-A").click()
         time.sleep(2)
@@ -101,8 +101,8 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath(".//*[@id='contact-to-visit-anonymous']/div[2]/form/input").click()
         # Agent allocation
         # driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
-        driver.find_element_by_xpath("//input[@value='Submit']").click()
-        # driver.find_element_by_xpath(".//*[@id='allocation-agent']/div[2]/form/input").click()
+        # driver.find_element_by_xpath("//input[@value='Submit']").click()
+        driver.find_element_by_xpath(".//*[@id='allocation-agent']/div[2]/form/input").click()
         # driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
         time.sleep(2)
