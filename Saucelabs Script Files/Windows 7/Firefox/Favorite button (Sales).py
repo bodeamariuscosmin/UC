@@ -28,6 +28,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         # Sign up with a new account
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Sign up").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
@@ -39,6 +40,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("(//input[@name='password'])[2]").send_keys("parola")
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
         time.sleep(2)
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Sales").click()
         driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("address_search").click()
@@ -47,6 +49,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("listing-position-A").click()
         # Click on the Favorite button
         driver.find_element_by_css_selector(".ss-icon.ss-star").click()
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("My Apartments").click()
         # See if the listing is set as a Favorite
         driver.find_element_by_link_text("Favorites").click()

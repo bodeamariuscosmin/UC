@@ -27,6 +27,7 @@ class Selenium2OnSauce(unittest.TestCase):
     def test_favorite_contact_to_visit(self):
         driver = self.driver
         driver.get(self.base_url + "/")
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Sign up").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
@@ -37,7 +38,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("(//input[@name='password'])[2]").clear()
         driver.find_element_by_xpath("(//input[@name='password'])[2]").send_keys("parola")
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
-        time.sleep(5)
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("address_search").click()
@@ -45,6 +46,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("search_button").click()
         driver.find_element_by_id("listing-position-A").click()
         driver.find_element_by_css_selector(".ss-icon.ss-star").click()
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("My Apartments").click()
         driver.find_element_by_link_text("Favorites").click()
         # Verifying if the listing is set as Favorite

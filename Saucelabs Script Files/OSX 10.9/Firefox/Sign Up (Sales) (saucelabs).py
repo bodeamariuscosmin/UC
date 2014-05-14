@@ -10,7 +10,6 @@ import random as rn
 import unittest, time, re
 my_string = 'string'
 
-
 class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
@@ -24,8 +23,8 @@ class Selenium2OnSauce(unittest.TestCase):
             command_executor="http://mariusb:bd27d6b0-f987-4773-b20b-633da38327de@ondemand.saucelabs.com:80/wd/hub"
         )
         self.driver.implicitly_wait(20)
-        self.base_url = "https://staging.urbancompass.com/"
-
+        self.base_url = "https://staging.urbancompass.com/" 
+        
     def test_sign_up_sales(self):
         driver = self.driver
         driver.get(self.base_url + "/")
@@ -41,7 +40,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("(//input[@name='password'])[2]").clear()
         driver.find_element_by_xpath("(//input[@name='password'])[2]").send_keys("parola")
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
-        driver.find_element_by_link_text("Me").click()
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
         # Sign up from the homepage Sales button
         driver.find_element_by_xpath(".//*[@id='homepage-content']/div[3]/div[2]/div/div[3]/a[2]").click()
@@ -55,9 +54,10 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("(//input[@name='password'])[2]").clear()
         driver.find_element_by_xpath("(//input[@name='password'])[2]").send_keys("parola")
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
-        driver.find_element_by_link_text("Me").click()
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
         # Sign up from the Neighborhood guide "Buy an Apartment from <neighborhood>" button
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Neighborhoods").click()
         driver.find_element_by_link_text("CHELSEA").click()
         time.sleep(5)
@@ -73,7 +73,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("(//input[@name='password'])[2]").clear()
         driver.find_element_by_xpath("(//input[@name='password'])[2]").send_keys("parola")
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
-        driver.find_element_by_link_text("Me").click()
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
 
     def tearDown(self):

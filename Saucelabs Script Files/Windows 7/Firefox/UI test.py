@@ -20,7 +20,7 @@ class Selenium2OnSauce(unittest.TestCase):
         self.driver.implicitly_wait(30)
         self.base_url = "https://staging.urbancompass.com/"
     
-    def test_change_password(self):
+    def test_ui(self):
         driver = self.driver
         driver.get(self.base_url + "/")
         try:
@@ -40,7 +40,9 @@ class Selenium2OnSauce(unittest.TestCase):
             print "The carousel is present!"
         except Exception ('ElementNotVisibleException'):
             print "The carousel is missing."
-
+            
+        driver.find_element_by_id("hamburger-navigation").click()
+        
         try:
             driver.find_element_by_link_text("Rentals")
             print "The Rentals button is present!"

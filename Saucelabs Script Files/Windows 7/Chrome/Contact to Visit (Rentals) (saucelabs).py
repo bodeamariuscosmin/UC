@@ -28,6 +28,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         # Sign up with a new account
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Sign up").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
@@ -38,9 +39,10 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("(//input[@name='password'])[2]").clear()
         driver.find_element_by_xpath("(//input[@name='password'])[2]").send_keys("parola")
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
-        time.sleep(5)
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("Map").click()
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Rentals").click()
         time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
@@ -55,7 +57,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").send_keys("0000")
         driver.find_element_by_id("allocation-optional-message").clear()
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
-        driver.find_element_by_xpath("//input[@value='Submit']").click()
+        driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
 
         driver.find_element_by_link_text("MY APARTMENTS").click()
         
@@ -71,7 +73,8 @@ class Selenium2OnSauce(unittest.TestCase):
         # driver.find_element_by_id("allocation-optional-message").clear()
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
         # driver.find_element_by_xpath(".//*[@id='allocation-agent']/div[2]/form/input").click()
-        driver.find_element_by_xpath("//input[@value='Submit']").click()
+        # driver.find_element_by_xpath("//input[@value='Submit']").click()
+        driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
@@ -82,7 +85,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("listing-position-B").click()
         driver.find_element_by_xpath("(//a[contains(text(),'Contact Agent')])[2]").click()
         # Agent allocation
-        driver.find_element_by_xpath("//input[@value='Submit']").click()
+        driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
