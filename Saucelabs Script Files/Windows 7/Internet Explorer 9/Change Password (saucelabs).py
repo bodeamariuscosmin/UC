@@ -23,12 +23,14 @@ class Selenium2OnSauce(unittest.TestCase):
     def test_change_password(self):
         driver = self.driver
         driver.get(self.base_url + "/")
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Log in").click()
         driver.find_element_by_name("email").clear()
         driver.find_element_by_name("email").send_keys("qa+renter@urbancompass.com")
         driver.find_element_by_xpath(".//*[@id='sign-in']/div[2]/form/fieldset[2]/input").send_keys("parola")
         driver.find_element_by_css_selector("#sign-in > div.modal_content > form > input[type=\"submit\"]").click()
-        driver.find_element_by_css_selector("i.ss-dropdown").click()
+        time.sleep(3)
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("My profile").click()
         driver.find_element_by_link_text("Change Password").click()
         time.sleep(1)

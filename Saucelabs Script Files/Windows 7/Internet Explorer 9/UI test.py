@@ -53,6 +53,8 @@ class Selenium2OnSauce(unittest.TestCase):
         except Exception ('ElementNotVisibleException'):
             print "The Sales button is missing."
 
+        driver.find_element_by_id("hamburger-navigation").click()
+
         try:
             driver.find_element_by_link_text("Agents")
             print "The Agents button is present!"

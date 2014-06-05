@@ -64,9 +64,9 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(3)
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
-        driver.find_element_by_id("address_search").click()
-        driver.find_element_by_id("address_search").send_keys("Chinatown")
-        driver.find_element_by_id("search_button").click()
+        driver.find_element_by_id("s2id_autogen1").click()
+        time.sleep(1)
+        driver.find_element_by_css_selector("#select2-result-label-5").click()
         driver.find_element_by_id("listing-position-A").click()
         # Contact Agent from the first button from full listing view
         driver.find_element_by_link_text("CONTACT AGENT").click()
@@ -80,9 +80,9 @@ class Selenium2OnSauce(unittest.TestCase):
 
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
-        driver.find_element_by_id("address_search").click()
-        driver.find_element_by_id("address_search").send_keys("Chinatown")
-        driver.find_element_by_id("search_button").click()
+        driver.find_element_by_id("s2id_autogen1").click()
+        time.sleep(1)
+        driver.find_element_by_css_selector("#select2-result-label-5").click()
         driver.find_element_by_id("listing-position-B").click()
         # Contact Agent from the second button from full listing view
         driver.find_element_by_xpath("(//a[contains(text(),'Contact Agent')])[2]").click()

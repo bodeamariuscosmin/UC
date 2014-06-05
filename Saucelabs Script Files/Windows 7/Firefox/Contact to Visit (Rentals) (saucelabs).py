@@ -13,7 +13,7 @@ class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
         desired_capabilities = webdriver.DesiredCapabilities.FIREFOX
-        desired_capabilities['version'] = '28'
+        desired_capabilities['version'] = '29'
         desired_capabilities['platform'] = 'Windows 7'
         desired_capabilities['name'] = 'Contact to Visit (Rentals)'
 
@@ -64,9 +64,9 @@ class Selenium2OnSauce(unittest.TestCase):
         # Submitting a listing from the first Contact Agent button
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
-        driver.find_element_by_id("address_search").click()
-        driver.find_element_by_id("address_search").send_keys("Chinatown")
-        driver.find_element_by_id("search_button").click()
+        driver.find_element_by_id("s2id_autogen1").click()
+        time.sleep(1)
+        driver.find_element_by_css_selector("#select2-result-label-5").click()
         driver.find_element_by_id("listing-position-A").click()
         driver.find_element_by_link_text("CONTACT AGENT").click()
         # Agent allocation
@@ -78,9 +78,9 @@ class Selenium2OnSauce(unittest.TestCase):
         # Submitting a listing from the second Contact Agent button
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
-        driver.find_element_by_id("address_search").click()
-        driver.find_element_by_id("address_search").send_keys("Chinatown")
-        driver.find_element_by_id("search_button").click()
+        driver.find_element_by_id("s2id_autogen1").click()
+        time.sleep(1)
+        driver.find_element_by_css_selector("#select2-result-label-5").click()
         driver.find_element_by_id("listing-position-B").click()
         driver.find_element_by_xpath("(//a[contains(text(),'Contact Agent')])[2]").click()
         # Agent allocation

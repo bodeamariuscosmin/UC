@@ -9,7 +9,7 @@ class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
         desired_capabilities = webdriver.DesiredCapabilities.FIREFOX
-        desired_capabilities['version'] = '28'
+        desired_capabilities['version'] = '29'
         desired_capabilities['platform'] = 'Windows 7'
         desired_capabilities['name'] = 'Set an Email Alert'
 
@@ -33,17 +33,17 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(2)
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Rentals").click()
-        driver.find_element_by_id("address_search").click()
-        driver.find_element_by_id("address_search").send_keys("Brooklyn")
-        driver.find_element_by_id("search_button").click()
+        driver.find_element_by_id("s2id_autogen1").click()
+        time.sleep(1)
+        driver.find_element_by_css_selector("#select2-result-label-2").click()
         driver.find_element_by_xpath("//li[@id='save_search']/a/img").click()
         time.sleep(5)
         driver.find_element_by_css_selector("div.save_button").click()
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Rentals").click()
-        driver.find_element_by_id("address_search").click()
-        driver.find_element_by_id("address_search").send_keys("Manhattan")
-        driver.find_element_by_id("search_button").click()
+        driver.find_element_by_id("s2id_autogen1").click()
+        time.sleep(1)
+        driver.find_element_by_css_selector("#select2-result-label-10").click()
         driver.find_element_by_xpath(".//*[@id='save_search']/a[1]").click()
         # driver.find_element_by_xpath("//li[@id='save_search']/a/img").click()
         time.sleep(5)

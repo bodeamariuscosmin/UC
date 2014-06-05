@@ -43,6 +43,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("(//input[@name='password'])[4]").send_keys("parola")
         driver.find_element_by_css_selector("#please-sign-in > div.modal_content > form > input[type=\"submit\"]").click()
         driver.find_element_by_id("hamburger-navigation").click()
+        time.sleep(2)
         driver.find_element_by_link_text("Logout").click()
         driver.find_element_by_id("hamburger-navigation").click()
         # Log in from the Neighborhood guide

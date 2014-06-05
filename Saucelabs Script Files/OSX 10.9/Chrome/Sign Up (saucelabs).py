@@ -62,9 +62,6 @@ class Selenium2OnSauce(unittest.TestCase):
         # Sign up from rental list modal
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
-        driver.find_element_by_id("address_search").click()
-        driver.find_element_by_id("address_search").send_keys("Flatiron")
-        driver.find_element_by_id("search_button").click()
         driver.find_element_by_link_text("SIGN UP FOR FREE").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
@@ -81,9 +78,9 @@ class Selenium2OnSauce(unittest.TestCase):
         # Sign up from Contact to Visit button
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
-        driver.find_element_by_id("address_search").click()
-        driver.find_element_by_id("address_search").send_keys("Flatiron")
-        driver.find_element_by_id("search_button").click()
+        driver.find_element_by_id("s2id_autogen1").click()
+        time.sleep(1)
+        driver.find_element_by_css_selector("#select2-result-label-5").click()
         driver.find_element_by_id("listing-position-A").click()
         time.sleep(2)
         driver.find_element_by_link_text("CONTACT AGENT").click()

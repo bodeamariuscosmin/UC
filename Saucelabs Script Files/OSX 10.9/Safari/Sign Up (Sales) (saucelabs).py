@@ -30,6 +30,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         # Log in from the header
+        time.sleep(4)
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Sales").click()
         driver.find_element_by_css_selector("#please-sign-in > footer > p > a").click()
@@ -62,8 +63,9 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Neighborhoods").click()
         driver.find_element_by_link_text("CHELSEA").click()
-        time.sleep(5)
-        driver.find_element_by_xpath(".//*[@id='experimental']/div[8]/div/a[2]").click()
+        time.sleep(10)
+        driver.find_element_by_link_text("BUY AN APARTMENT IN CHELSEA").click()
+        #driver.find_element_by_xpath(".//*[@id='experimental']/div[8]/div/a[2]").click()
         time.sleep(5)
         driver.find_element_by_css_selector("#please-sign-in > footer > p > a").click()
         driver.find_element_by_name("first").clear()
