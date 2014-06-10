@@ -13,7 +13,7 @@ class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
         desired_capabilities = webdriver.DesiredCapabilities.FIREFOX
-        desired_capabilities['version'] = '28'
+        desired_capabilities['version'] = '29'
         desired_capabilities['platform'] = ' Windows 7'
         desired_capabilities['name'] = 'Favorite Button (Sales)'
 

@@ -70,7 +70,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_name("email").send_keys("qa+renter@urbancompass.com")
         driver.find_element_by_xpath(".//*[@id='sign-in']/div[2]/form/fieldset[2]/input").send_keys("parola")
         driver.find_element_by_css_selector("#sign-in > div.modal_content > form > input[type=\"submit\"]").click()
-        time.sleep(2)
+        time.sleep(5)
         driver.find_element_by_xpath(".//*[@id='hamburger-navigation']/img").click()
         time.sleep(8)
         driver.find_element_by_link_text("Logout").click()
