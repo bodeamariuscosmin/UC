@@ -76,7 +76,7 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(1)
         driver.find_element_by_link_text("CONTACT AGENT").click()
         time.sleep(2)
-        driver.find_element_by_xpath("html/body/div[3]/section[20]/div[2]/form/input").click()
+        driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/input").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
