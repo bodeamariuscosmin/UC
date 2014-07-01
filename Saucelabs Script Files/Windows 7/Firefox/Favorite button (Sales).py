@@ -22,7 +22,7 @@ class Selenium2OnSauce(unittest.TestCase):
             command_executor="http://mariusb:bd27d6b0-f987-4773-b20b-633da38327de@ondemand.saucelabs.com:80/wd/hub"
         )
         self.driver.implicitly_wait(30)
-        self.base_url = "https://staging.urbancompass.com"
+        self.base_url = "https://staging.urbancompass.com/"
     
     def test_favorite_contact_to_visit(self):
         driver = self.driver
@@ -47,7 +47,7 @@ class Selenium2OnSauce(unittest.TestCase):
         time.sleep(1)
         driver.find_element_by_css_selector("#select2-result-label-5").click()
         
-        driver.find_element_by_id("listing-position-A").click()
+        driver.find_element_by_xpath(".//*[@id='listing-position-A']/a").click()
         # Click on the Favorite button
         driver.find_element_by_css_selector(".ss-icon.ss-star").click()
         driver.find_element_by_id("hamburger-navigation").click()
@@ -62,7 +62,7 @@ class Selenium2OnSauce(unittest.TestCase):
         except Exception ('ElementNotVisibleException'):
             print "The listing is not set as Favorite."
         # Submit the listing from the Favorite page
-        driver.find_element_by_xpath("//div[@id='container']/div/div[2]/div/div/div[2]/div/div[3]/div/div/a/div[5]").click()
+        driver.find_element_by_xpath("html/body/div[1]/div[1]/div/div[2]/div/div/div[2]/div/div[3]/div/div/a/div[5]").click()
         # See if the listing is submitted
         driver.find_element_by_link_text("Request Status").click()
         

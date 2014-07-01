@@ -55,9 +55,10 @@ class Selenium2OnSauce(unittest.TestCase):
         # Contact Agent from the map modal
         driver.find_element_by_link_text("CONTACT AGENT").click()
         # Agent allocation
-        driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").clear()
+        time.sleep(3)
+        #driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").clear()
         driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").send_keys("0000")
-        driver.find_element_by_id("allocation-optional-message").clear()
+        #driver.find_element_by_id("allocation-optional-message").clear()
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
         driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
@@ -71,8 +72,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("CONTACT AGENT").click()
         # Agent allocation
         # driver.find_element_by_id("allocation-optional-message").click
-        driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
-        driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
+        driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/input").click()
         # driver.find_element_by_xpath(".//*[@id='allocation-agent']/div[2]/form/input").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
         time.sleep(3)
@@ -86,9 +86,7 @@ class Selenium2OnSauce(unittest.TestCase):
         # Contact Agent from the second button from full listing view
         driver.find_element_by_xpath("(//a[contains(text(),'Contact Agent')])[2]").click()
         # Agent allocation
-        driver.find_element_by_id("allocation-optional-message").clear()
-        driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
-        driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
+        driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/input").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()

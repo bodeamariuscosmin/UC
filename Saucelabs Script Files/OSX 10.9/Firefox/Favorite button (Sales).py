@@ -13,7 +13,7 @@ class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
         desired_capabilities = webdriver.DesiredCapabilities.FIREFOX
-        desired_capabilities['version'] = '28'
+        desired_capabilities['version'] = '29'
         desired_capabilities['platform'] = 'OS X 10.9'
         desired_capabilities['name'] = 'Favorite Button (Sales)'
 
@@ -45,8 +45,10 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("s2id_autogen1").click()
         time.sleep(1)
         driver.find_element_by_css_selector("#select2-result-label-5").click()
-        driver.find_element_by_id("listing-position-A").click()
+        time.sleep(2)
+        driver.find_element_by_xpath(".//*[@id='listing-position-A']/a").click()
         # Click on the Favorite button
+        time.sleep(2)
         driver.find_element_by_css_selector(".ss-icon.ss-star").click()
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("My Apartments").click()
@@ -59,7 +61,7 @@ class Selenium2OnSauce(unittest.TestCase):
         except Exception ('ElementNotVisibleException'):
             print "The listing is not set as Favorite."
         # Submit the listing from the Favorite page
-        driver.find_element_by_xpath("//div[@id='container']/div/div[2]/div/div/div[2]/div/div[3]/div/div/a/div[5]").click()
+        driver.find_element_by_xpath("html/body/div[1]/div[1]/div/div[2]/div/div/div[2]/div/div[3]/div/div/a/div[5]").click()
         # See if the listing is submitted
         driver.find_element_by_link_text("Request Status").click()
         # Verifying if the listing is submitted

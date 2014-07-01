@@ -48,7 +48,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("div.save_button").click()
         time.sleep(2)
         driver.find_element_by_id("manage_alerts").click()
-        driver.find_element_by_id("notify-immediately").click()
+        # driver.find_element_by_id("notify-immediately").click()
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Search alerts").click()
         time.sleep(5)

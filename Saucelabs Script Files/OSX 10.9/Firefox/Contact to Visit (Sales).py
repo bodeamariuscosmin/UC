@@ -45,24 +45,23 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("s2id_autogen1").click()
         time.sleep(1)
         driver.find_element_by_css_selector("#select2-result-label-5").click()
-        driver.find_element_by_id("listing-position-A").click()
+        driver.find_element_by_xpath(".//*[@id='listing-position-A']/a").click()
         # Contact Agent from the top button
         driver.find_element_by_link_text("CONTACT AGENT").click()
         # Agent allocation
-        driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").clear()
-        driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").send_keys("0000")
-        driver.find_element_by_id("allocation-optional-message").clear()
-        driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
-        driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
+        driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/div[1]/input").clear()
+        driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/div[1]/input").send_keys("0000")
+        driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/input").click()
         # Back to Search
-        driver.find_element_by_link_text("Back to Search").click()
-        driver.find_element_by_id("listing-position-B").click()
+        '''driver.find_element_by_link_text("Back to Search").click()
+        driver.find_element_by_xpath(".//*[@id='listing-position-B']/a").click()
         # Contact Agent from the second button (from bottom of the page)
         driver.find_element_by_xpath("(//a[contains(text(),'Contact Agent')])[2]").click()
         driver.find_element_by_id("allocation-optional-message").clear()
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
         driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
-        driver.find_element_by_id("hamburger-navigation").click()
+        driver.find_element_by_id("hamburger-navigation").click()'''
+        driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Sales").click() 
         driver.find_element_by_link_text("Map").click()
         driver.find_element_by_id("hamburger-navigation").click()
@@ -77,9 +76,7 @@ class Selenium2OnSauce(unittest.TestCase):
         # Contact Agent from the map modal
         driver.find_element_by_link_text("CONTACT AGENT").click()
         # Agent allocation
-        driver.find_element_by_id("allocation-optional-message").clear()
-        driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
-        driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
+        driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/input").click()
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
     

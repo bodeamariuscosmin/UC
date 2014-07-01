@@ -66,10 +66,10 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("s2id_autogen1").click()
         time.sleep(1)
         driver.find_element_by_css_selector("#select2-result-label-5").click()
-        driver.find_element_by_id("listing-position-A").click()
+        driver.find_element_by_xpath(".//*[@id='listing-position-A']/a/div[2]/div[1]").click()
         driver.find_element_by_link_text("CONTACT AGENT").click()
         # Agent allocation
-        driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
+        driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/input").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
         # Submitting a listing from the second Contact Agent button
         time.sleep(2)
@@ -78,13 +78,12 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("s2id_autogen1").click()
         time.sleep(1)
         driver.find_element_by_css_selector("#select2-result-label-5").click()
-        driver.find_element_by_id("listing-position-B").click()
+        driver.find_element_by_xpath(".//*[@id='listing-position-B']/a/div[2]/div[1]").click()
         time.sleep(5)
         driver.find_element_by_xpath("(//a[contains(text(),'Contact Agent')])[2]").click()
         # Agent allocation
         # driver.find_element_by_id("allocation-optional-message").clear()
-        driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
-        driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
+        driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/input").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
