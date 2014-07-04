@@ -45,9 +45,9 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Rentals").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
-        time.sleep(10)
         driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[2]").click()
+        time.sleep(10)
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[3]").click()
         driver.find_element_by_css_selector(".listing-picker-popup>a").click()
         time.sleep(5)
         # Submitting a listing from the map modal

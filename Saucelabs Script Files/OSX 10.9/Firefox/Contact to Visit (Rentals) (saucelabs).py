@@ -55,11 +55,9 @@ class Selenium2OnSauce(unittest.TestCase):
         # Contact Agent from the map modal
         driver.find_element_by_link_text("CONTACT AGENT").click()
         # Agent allocation
-        driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").clear()
-        driver.find_element_by_xpath(".//*[@id='allocation-phone-number']").send_keys("0000")
-        driver.find_element_by_id("allocation-optional-message").clear()
-        driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
-        driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
+        driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/div[1]/input").clear()
+        driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/div[1]/input").send_keys("0000")
+        driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/input").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
