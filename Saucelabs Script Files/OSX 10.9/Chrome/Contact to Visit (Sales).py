@@ -90,7 +90,8 @@ class Selenium2OnSauce(unittest.TestCase):
         # driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
         driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/input").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
-        driver.find_element_by_link_text("Me").click()
+        driver.find_element_by_link_text("Rentals").click()
+        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Logout").click()
     
     def tearDown(self):
