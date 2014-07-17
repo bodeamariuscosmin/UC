@@ -82,8 +82,21 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("CONTACT AGENT").click()
         # Agent allocation
         driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/input").click()
-        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
+        driver.find_element_by_link_text("Request Status").click()
+
+        # Address of the submitted A listing
+        print driver.find_element_by_xpath(".//*[@id='container']/div/div[2]/div/div/div[2]/div/div[2]/div/div[2]/a/div[2]").text
+        # Status of the submitted A listing
+        statusListA = driver.find_element_by_xpath(".//*[@id='container']/div/div[2]/div/div/div[2]/div/div[2]/div/div[2]/a/div[1]")
+        print statusListA.text
+        
+        # Address of the submitted map listing
+        print driver.find_element_by_xpath(".//*[@id='container']/div/div[2]/div/div/div[2]/div/div[2]/div/div[2]/a[2]/div[2]").text
+        # Status of the submitted map listing
+        statusMap = driver.find_element_by_xpath(".//*[@id='container']/div/div[2]/div/div/div[2]/div/div[2]/div/div[2]/a[2]/div[1]")
+        print statusMap.text
+        
         driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
     

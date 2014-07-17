@@ -52,8 +52,9 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("//li[@id='save_search']/a/img").click()
         driver.find_element_by_css_selector("div.save_button").click()
         # Bug: The customer is not previously logged out
-        time.sleep(5)
-        driver.find_element_by_css_selector("#sign-up>footer>p>a").click() # !!!
+        time.sleep(2)
+        driver.find_element_by_link_text("Log in!").click()
+        #driver.find_element_by_css_selector("#sign-up>footer>p>a").click() # !!!
         driver.find_element_by_name("email").clear()
         driver.find_element_by_name("email").send_keys("qa+renter@urbancompass.com")
         driver.find_element_by_name("password").clear()
