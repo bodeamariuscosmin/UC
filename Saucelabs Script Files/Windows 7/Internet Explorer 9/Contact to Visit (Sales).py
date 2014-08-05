@@ -39,7 +39,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
         time.sleep(2)
         driver.find_element_by_xpath(".//*[@id='hamburger-navigation']/img").click()
-        time.sleep(2)
+        time.sleep(5)
         driver.find_element_by_link_text("Sales").click()
         time.sleep(2)
         driver.find_element_by_link_text("List").click()
