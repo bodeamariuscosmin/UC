@@ -13,7 +13,7 @@ class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
         desired_capabilities = webdriver.DesiredCapabilities.CHROME
-        desired_capabilities['version'] = '31'
+        desired_capabilities['version'] = '35'
         desired_capabilities['platform'] = 'Windows 7'
         desired_capabilities['name'] = 'Contact to Visit (Rentals)'
 

@@ -15,7 +15,7 @@ class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
         desired_capabilities = webdriver.DesiredCapabilities.FIREFOX
-        desired_capabilities['version'] = '27'
+        desired_capabilities['version'] = '30'
         desired_capabilities['platform'] = 'OS X 10.9'
         desired_capabilities['name'] = 'Contact to Visit (Rentals)'
 

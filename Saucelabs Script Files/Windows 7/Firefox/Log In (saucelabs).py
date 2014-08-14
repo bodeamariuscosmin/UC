@@ -11,7 +11,7 @@ class Selenium2OnSauce(unittest.TestCase):
 
     def setUp(self):
         desired_capabilities = webdriver.DesiredCapabilities.FIREFOX
-        desired_capabilities['version'] = '29'
+        desired_capabilities['version'] = '30'
         desired_capabilities['platform'] = 'Windows 7'
         desired_capabilities['name'] = 'Log In'
 
@@ -19,7 +19,7 @@ class Selenium2OnSauce(unittest.TestCase):
             desired_capabilities=desired_capabilities,
             command_executor="http://mariusb:bd27d6b0-f987-4773-b20b-633da38327de@ondemand.saucelabs.com:80/wd/hub"
         )
-        self.driver.implicitly_wait(30)
+        self.driver.implicitly_wait(15)
         self.base_url = "https://staging.urbancompass.com/"
 
     def test_log_in(self):
