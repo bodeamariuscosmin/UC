@@ -57,19 +57,21 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/input").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
         time.sleep(2)
-        '''driver.find_element_by_link_text("Sales").click()
+        driver.find_element_by_link_text("Sales").click()
         driver.find_element_by_id("s2id_autogen1").click()
         time.sleep(1)
         driver.find_element_by_css_selector("#select2-result-label-5").click()
         driver.find_element_by_id("listing-position-B").click()
         # The second Contact Agent button (from the bottom)
+        driver.find_element_by_id("ready-card").click()
         driver.find_element_by_xpath("(//a[contains(text(),'Contact Agent')])[2]").click()
+        time.sleep(5)
         # Agent allocation
         driver.find_element_by_id("allocation-optional-message").clear()
         driver.find_element_by_id("allocation-optional-message").send_keys("Quality Assurance test")
         driver.find_element_by_xpath(".//*[@id='allocation-random-agent']/div[2]/form/input").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
-        time.sleep(1)'''
+        time.sleep(1)
         driver.find_element_by_link_text("Sales").click()
         driver.find_element_by_link_text("Map").click()
         driver.find_element_by_id("hamburger-navigation").click()
@@ -94,11 +96,17 @@ class Selenium2OnSauce(unittest.TestCase):
         # Status of the submitted A listing
         statusListA = driver.find_element_by_xpath(".//*[@id='container']/div/div[2]/div/div/div[2]/div/div[2]/div/div[2]/a/div[1]")
         print statusListA.text
+
+        # Address of the submitted B listing
+        print driver.find_element_by_xpath(".//*[@id='container']/div/div[2]/div/div/div[2]/div/div[2]/div/div[2]/a[2]/div[2]").text
+        # Status of the submitted B listing
+        statusListB = driver.find_element_by_xpath(".//*[@id='container']/div/div[2]/div/div/div[2]/div/div[2]/div/div[2]/a[2]/div[1]")
+        print statusListB.text
         
         # Address of the submitted map listing
-        print driver.find_element_by_xpath(".//*[@id='container']/div/div[2]/div/div/div[2]/div/div[2]/div/div[2]/a[2]/div[2]").text
+        print driver.find_element_by_xpath(".//*[@id='container']/div/div[2]/div/div/div[2]/div/div[2]/div/div[2]/a[3]/div[2]").text
         # Status of the submitted map listing
-        statusMap = driver.find_element_by_xpath(".//*[@id='container']/div/div[2]/div/div/div[2]/div/div[2]/div/div[2]/a[2]/div[1]")
+        statusMap = driver.find_element_by_xpath(".//*[@id='container']/div/div[2]/div/div/div[2]/div/div[2]/div/div[2]/a[3]/div[1]")
         print statusMap.text
         
         driver.find_element_by_link_text("Rentals").click()

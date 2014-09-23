@@ -25,10 +25,8 @@ class Selenium2OnSauce(unittest.TestCase):
     def test_log_in_sales(self):
         driver = self.driver
         driver.get(self.base_url + "/")
-        driver.find_element_by_id("hamburger-navigation").click()
         # Log in from the rental map/list modal
         driver.find_element_by_link_text("Sales").click()
-        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Log in").click()
         driver.find_element_by_xpath(".//*[@id='sign-in']/div[2]/form/fieldset[1]/input").clear()
         driver.find_element_by_xpath(".//*[@id='sign-in']/div[2]/form/fieldset[1]/input").send_keys("qa+renter@urbancompass.com")
@@ -36,7 +34,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath(".//*[@id='sign-in']/div[2]/form/fieldset[2]/input").send_keys("parola")
         driver.find_element_by_xpath(".//*[@id='sign-in']/div[2]/form/input").click()
         time.sleep(2)
-        driver.find_element_by_id("hamburger-navigation").click()
+        driver.find_element_by_link_text("Me").click()
         time.sleep(1)
         driver.find_element_by_link_text("Logout").click()
 

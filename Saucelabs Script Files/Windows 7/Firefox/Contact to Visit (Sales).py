@@ -71,11 +71,11 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Sales").click() # Avoiding the returning from List view to Map view bug 
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[4]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div[3]/div[1]/div[3]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[1]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div[3]/div[1]/div[3]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[3]/div[2]/div/a[1]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div[3]/div[3]/div/a").click()
         # driver.find_element_by_css_selector(".listing-picker-popup>a").click()
         time.sleep(1)
         # Contact Agent from the map modal

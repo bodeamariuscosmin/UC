@@ -28,7 +28,6 @@ class Selenium2OnSauce(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         # Sign up with a new account
-        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Sign up").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
@@ -39,7 +38,8 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("(//input[@name='password'])[2]").clear()
         driver.find_element_by_xpath("(//input[@name='password'])[2]").send_keys("parola")
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
-        driver.find_element_by_id("hamburger-navigation").click()
+        time.sleep(2)
+
         driver.find_element_by_link_text("Sales").click()
         driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("s2id_autogen1").click()
@@ -64,14 +64,14 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_link_text("MY APARTMENTS").click()
         driver.find_element_by_link_text("Sales").click() 
         driver.find_element_by_link_text("Map").click()
-        driver.find_element_by_id("hamburger-navigation").click()
+        #driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Sales").click() # Avoiding the returning from List view to Map view bug 
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[4]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div[3]/div[1]/div[3]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[1]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div[3]/div[1]/div[3]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[3]/div[2]/div/a[1]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div[3]/div[3]/div/a").click()
         time.sleep(1)
         # Contact Agent from the map modal
         driver.find_element_by_link_text("CONTACT AGENT").click()

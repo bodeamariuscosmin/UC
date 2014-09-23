@@ -16,7 +16,7 @@ class Selenium2OnSauce(unittest.TestCase):
         desired_capabilities['version'] = '7'
         desired_capabilities['platform'] = 'OS X 10.9'
         desired_capabilities['name'] = 'Contact to Visit (Sales)'
-
+        
         self.driver = webdriver.Remote(
             desired_capabilities=desired_capabilities,
             command_executor="http://mariusb:bd27d6b0-f987-4773-b20b-633da38327de@ondemand.saucelabs.com:80/wd/hub"
@@ -27,7 +27,6 @@ class Selenium2OnSauce(unittest.TestCase):
     def test_sales_contact_to_visit(self):
         driver = self.driver
         driver.get(self.base_url + "/")
-        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Sign up").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
@@ -38,7 +37,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("(//input[@name='password'])[2]").clear()
         driver.find_element_by_xpath("(//input[@name='password'])[2]").send_keys("parola")
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
-        driver.find_element_by_id("hamburger-navigation").click()
+
         driver.find_element_by_link_text("Sales").click()
         driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("s2id_autogen1").click()
@@ -49,7 +48,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/div[1]/input").clear()
         driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/div[1]/input").send_keys("0000")
         driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/input").click()
-        driver.find_element_by_id("hamburger-navigation").click()
+
         driver.find_element_by_link_text("Sales").click()
         '''driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("s2id_autogen1").click()
@@ -62,14 +61,14 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Sales").click() '''
         driver.find_element_by_link_text("Map").click()
-        driver.find_element_by_id("hamburger-navigation").click()
+
         driver.find_element_by_link_text("Sales").click() # Avoiding the returning from List view to Map view bug 
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[4]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div[3]/div[1]/div[3]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[2]/div[2]/div[1]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div[3]/div[1]/div[3]").click()
         time.sleep(10)
-        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div/div[3]/div[2]/div/a[1]").click()
+        driver.find_element_by_xpath(".//*[@id='map']/div/div[1]/div[3]/div[3]/div/a").click()
         time.sleep(1)
         driver.find_element_by_link_text("CONTACT AGENT").click()
         driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/input").click()

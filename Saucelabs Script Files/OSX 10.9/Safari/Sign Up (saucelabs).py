@@ -29,7 +29,6 @@ class Selenium2OnSauce(unittest.TestCase):
         driver = self.driver
         driver.get(self.base_url + "/")
         # Sign up from the header
-        driver.find_element_by_id("hamburger-navigation").click()
         driver.find_element_by_link_text("Sign up").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
@@ -41,9 +40,9 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("(//input[@name='password'])[2]").send_keys("parola")
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
         time.sleep(3)
-        driver.find_element_by_id("hamburger-navigation").click()
+        driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
-        driver.find_element_by_id("hamburger-navigation").click()
+
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_link_text("List").click()
         driver.find_element_by_id("s2id_autogen1").click()
@@ -68,10 +67,10 @@ class Selenium2OnSauce(unittest.TestCase):
         # Agent allocation
         driver.find_element_by_xpath("html/body/div[3]/section[21]/div[2]/form/input").click()
         driver.find_element_by_link_text("MY APARTMENTS").click()
-        driver.find_element_by_id("hamburger-navigation").click()
+        driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
         # Sign up from Email Alert
-        driver.find_element_by_id("hamburger-navigation").click()
+
         driver.find_element_by_link_text("Rentals").click()
         driver.find_element_by_xpath("//li[@id='save_search']/a/img").click()
         driver.find_element_by_css_selector("div.save_button").click()
@@ -86,7 +85,7 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
         time.sleep(5)
         driver.find_element_by_id("notify-immediately").click()
-        driver.find_element_by_id("hamburger-navigation").click()
+        driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
 
 

@@ -26,14 +26,13 @@ class Selenium2OnSauce(unittest.TestCase):
         self.driver.implicitly_wait(30)
         self.base_url = "https://staging.urbancompass.com/"
 
-    def test_sign_up_sales(self): # Bug: Logged users not always log out and this makes the test to fail. 
+    def test_sign_up_sales(self):
         driver = self.driver
         driver.get(self.base_url + "/")
-        # Log in from the header
-        time.sleep(4)
-        driver.find_element_by_id("hamburger-navigation").click()
+        # Sign up from sales map/list modal
         driver.find_element_by_link_text("Sales").click()
-        driver.find_element_by_css_selector("#please-sign-in > footer > p > a").click()
+
+        driver.find_element_by_link_text("Sign up").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
         driver.find_element_by_name("last").clear()
@@ -43,11 +42,14 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("(//input[@name='password'])[2]").clear()
         driver.find_element_by_xpath("(//input[@name='password'])[2]").send_keys("parola")
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
-        driver.find_element_by_id("hamburger-navigation").click()
+        time.sleep(1)
+        driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
-        # Sign up from the homepage Sales button
-        driver.find_element_by_xpath(".//*[@id='homepage-content']/div[3]/div[2]/div/div[3]/a[2]").click()
-        driver.find_element_by_css_selector("#please-sign-in > footer > p > a").click()
+        # Sign up from homepage Sales button
+        driver.find_element_by_link_text("Sales").click()
+
+        driver.find_element_by_link_text("Log in").click()
+        driver.find_element_by_css_selector("#sign-in>footer>p>a").click()
         driver.find_element_by_name("first").clear()
         driver.find_element_by_name("first").send_keys("qa")
         driver.find_element_by_name("last").clear()
@@ -57,27 +59,27 @@ class Selenium2OnSauce(unittest.TestCase):
         driver.find_element_by_xpath("(//input[@name='password'])[2]").clear()
         driver.find_element_by_xpath("(//input[@name='password'])[2]").send_keys("parola")
         driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
-        driver.find_element_by_id("hamburger-navigation").click()
+        driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
-        # Log in from the Neighborhood guide
-        driver.find_element_by_id("hamburger-navigation").click()
-        driver.find_element_by_link_text("Neighborhoods").click()
-        driver.find_element_by_link_text("CHELSEA").click()
-        time.sleep(10)
-        driver.find_element_by_link_text("BUY AN APARTMENT IN CHELSEA").click()
-        #driver.find_element_by_xpath(".//*[@id='experimental']/div[8]/div/a[2]").click()
-        time.sleep(5)
-        driver.find_element_by_css_selector("#please-sign-in > footer > p > a").click()
-        driver.find_element_by_name("first").clear()
-        driver.find_element_by_name("first").send_keys("qa")
-        driver.find_element_by_name("last").clear()
-        driver.find_element_by_name("last").send_keys("test")
-        driver.find_element_by_xpath("(//input[@name='email'])[2]").clear()
-        driver.find_element_by_xpath("(//input[@name='email'])[2]").send_keys("qa+"+str(rn.randint(0,99999))+"@urbancompass.com")
-        driver.find_element_by_xpath("(//input[@name='password'])[2]").clear()
-        driver.find_element_by_xpath("(//input[@name='password'])[2]").send_keys("parola")
-        driver.find_element_by_css_selector("#sign-up > div.modal_content > form > input[type=\"submit\"]").click()
-        driver.find_element_by_id("hamburger-navigation").click()
+        # Sign up from Contact Agent button
+        driver.find_element_by_link_text("Sales").click()
+        driver.find_element_by_link_text("List").click()
+        driver.find_element_by_id("s2id_autogen1").click()
+        time.sleep(1)
+        # Sign up from a listing that requires login to be seen
+        driver.find_element_by_css_selector("#select2-result-label-5").click()
+        driver.find_element_by_id("listing-position-A").click()
+        driver.find_element_by_xpath(".//*[@id='please-sign-up']/div[2]/form/fieldset[1]/input").clear()
+        driver.find_element_by_xpath(".//*[@id='please-sign-up']/div[2]/form/fieldset[1]/input").send_keys("qa")
+        driver.find_element_by_xpath(".//*[@id='please-sign-up']/div[2]/form/fieldset[2]/input").clear()
+        driver.find_element_by_xpath(".//*[@id='please-sign-up']/div[2]/form/fieldset[2]/input").send_keys("test")
+        driver.find_element_by_xpath(".//*[@id='please-sign-up']/div[2]/form/fieldset[3]/input").clear()
+        driver.find_element_by_xpath(".//*[@id='please-sign-up']/div[2]/form/fieldset[3]/input").send_keys("qa+"+str(rn.randint(0,99999))+"@urbancompass.com")
+        driver.find_element_by_xpath(".//*[@id='please-sign-up']/div[2]/form/fieldset[4]/input").clear()
+        driver.find_element_by_xpath(".//*[@id='please-sign-up']/div[2]/form/fieldset[4]/input").send_keys("parola")
+        driver.find_element_by_xpath(".//*[@id='please-sign-up']/div[2]/form/input").click() #Sign Up
+        time.sleep(2)
+        driver.find_element_by_link_text("Me").click()
         driver.find_element_by_link_text("Logout").click()
 
     def tearDown(self):
